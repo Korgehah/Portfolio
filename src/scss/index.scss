@@ -1,0 +1,246 @@
+$font-stack: Inter, sans-serif;
+$font-normal: normal;
+$font-medium: 500;
+$font-bold: bold;
+$bg_color: #e5e5e5;
+$color-1: #ffb400;
+$color-2: #2b2b2b;
+$color-3: #18191a;
+$color-4: #3a3b3c;
+$color-5: #242526;
+$color-6: #767676;
+$color-7: #f0f0f6;
+$color-8: #e4e6eb;
+$color-9: #ffffff;
+$color-10: #7eb942;
+$font-main-size: 18px;
+$font-small-size: 15px;
+$line-height-main: 24px;
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.eot");
+  src: local("Inter Regular"), local("Inter-Regular"),
+    url("../fonts/Inter-Regular.eot") format("embedded-opentype"),
+    url("../fonts/Inter-Regular.woff2") format("woff2"),
+    url("../fonts/Inter-Regular.woff") format("woff"),
+    url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.eot");
+  src: local("Inter Medium"), local("Inter-Medium"),
+    url("../fonts/Inter-Medium.eot") format("embedded-opentype"),
+    url("../fonts/Inter-Medium.woff2") format("woff2"),
+    url("../fonts/Inter-Medium.woff") format("woff"),
+    url("../fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.eot");
+  src: local("Inter Semi Bold"), local("Inter-SemiBold"),
+    url("../fonts/Inter-SemiBold.eot") format("embedded-opentype"),
+    url("../fonts/Inter-SemiBold.woff2") format("woff2"),
+    url("../fonts/Inter-SemiBold.woff") format("woff"),
+    url("../fonts/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Bold.eot");
+  src: local("Inter Bold"), local("Inter-Bold"),
+    url("../fonts/Inter-Bold.eot") format("embedded-opentype"),
+    url("../fonts/Inter-Bold.woff2") format("woff2"),
+    url("../fonts/Inter-Bold.woff") format("woff"),
+    url("../fonts/Inter-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: $font-stack;
+  font-size: $font-main-size;
+  font-weight: $font-normal;
+  color: $color-2;
+  margin: 0;
+  background-color: $bg_color;
+  line-height: $line-height-main;
+}
+
+.about {
+  background-color: $color-9;
+  width: 305px;
+  padding: 25px 0 25px;
+  font-size: $font-small-size;
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 220px;
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 25px;
+    padding-bottom: 25px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 1.5px;
+      background-color: $color-7;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+  }
+
+  &__avatar {
+    height: 150px;
+    width: 150px;
+
+    &-container {
+      position: relative;
+      display: flex;
+      width: 150px;
+      margin: 0 auto 31px;
+    }
+
+    &-container::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $color-10;
+      z-index: 10;
+      bottom: 18px;
+      right: 10px;
+    }
+  }
+
+  &__name,
+  &__speciality {
+    margin: 0 0 15px;
+  }
+
+  &__name {
+    font-size: $font-main-size;
+    font-weight: $font-medium;
+  }
+
+  &__speciality {
+    color: $color-6;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: $font-main-size;
+    text-align: left;
+    line-height: 22px;
+    margin-bottom: 15px;
+  }
+
+  &__skills {
+    margin-bottom: 5px;
+    padding-left: 30px;
+    text-align: left;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 15px;
+      height: 15px;
+      background: url("../images/extra-skill_icon.svg") no-repeat;
+      position: absolute;
+      left: 0px;
+      top: 4px;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+}
+
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__item {
+    width: 24px;
+    height: 24px;
+    background-color: $color-1;
+    border-radius: 50%;
+    display: flex;
+  }
+
+  &__image {
+    width: 14px;
+    height: 14px;
+    margin: auto;
+  }
+}
+
+.data {
+  display: flex;
+  justify-content: space-between;
+  height: 24px;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__name {
+    padding: 0 6px 0 5px;
+    background-color: $color-1;
+  }
+
+  &__value_colored {
+    color: $color-10;
+  }
+}
+
+.range {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: $color-6;
+  margin-bottom: 9px;
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  &__progress {
+    width: 220px;
+    height: 4px;
+    border: 0.5px solid $color-1;
+    border-radius: 5px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 217px;
+      height: 2px;
+      background-color: $color-1;
+      border-radius: 5px;
+      left: 1px;
+      top: 1px;
+    }
+  }
+}
