@@ -1,26 +1,33 @@
-import React from "react";
+import React from 'react';
+import facebook from '../../assets/images/facebook.svg';
+import instagram from '../../assets/images/instagram.svg';
+import twitter from '../../assets/images/twitter.svg';
+import linkedin from '../../assets/images/linkedin.svg';
+import youtube from '../../assets/images/youtube.svg';
+import dribbble from '../../assets/images/dribbble.svg';
+// Если уж решил закидывать images в папку src, то импорть их, а не строкой определяй
 
-const SocialItem = ({src, alt}) => {
+const SocialItem = ({ src, alt, href }) => {
   return (
-    <div className="socials__item">
-      <img className="socials__image" src={src} alt={alt} />
-    </div>
+    <a href={href} className='socials__item'>
+      <img className='socials__image' src={src} alt={alt} />
+    </a>
   );
 };
 
 const Socials = () => {
   const MockSocials = [
-    { src: "../../images/facebook.svg", alt: "facebook" },
-    { src: "../../images/instagram.svg", alt: "instagram" },
-    { src: "../../images/twitter.svg", alt: "twitter" },
-    { src: "../../images/linkedin.svg", alt: "linkedin" },
-    { src: "../../images/youtube.svg", alt: "youtube" },
-    { src: "../../images/dribble.svg", alt: "dribble" },
+    { src: facebook, alt: 'facebook', href: '' },
+    { src: instagram, alt: 'instagram', href: '' },
+    { src: twitter, alt: 'twitter', href: '' },
+    { src: linkedin, alt: 'linkedin', href: '' },
+    { src: youtube, alt: 'youtube', href: '' },
+    { src: dribbble, alt: 'dribble', href: '' },
   ];
   return (
-    <div className="socials">
+    <div className='socials'>
       {MockSocials.map((social, index) => (
-        <SocialItem {...social} key={index}/>
+        <SocialItem {...social} key={index} />
       ))}
     </div>
   );
