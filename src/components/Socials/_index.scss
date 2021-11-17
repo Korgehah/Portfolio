@@ -1,0 +1,19 @@
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  
+    &__item {
+      width: 24px;
+      height: 24px;
+      background-color: $color-1;
+      border-radius: 50%;
+      display: flex;
+    }
+  
+    &__image {
+      width: 14px;
+      height: 14px;
+      margin: auto;
+    }
+  }

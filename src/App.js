@@ -1,12 +1,7 @@
 import React from "react";
 import avatar from "./images/avatar.png";
-import facebook from "./images/facebook.svg";
-import dribble from "./images/dribble.svg";
-import instagram from "./images/instagram.svg";
-import linkedin from "./images/linkedin.svg";
-import twitter from "./images/twitter.svg";
-import youtube from "./images/youtube.svg";
 import "./scss/index.scss";
+import Socials from "./components/Socials/index.jsx";
 
 function App() {
   return (
@@ -19,30 +14,7 @@ function App() {
             </div>
             <p className="about__name">Rayan Adlardard</p>
             <p className="about__speciality">Front-End Developer</p>
-            <div className="socials">
-              <div className="socials__item">
-                <img className="socials__image" src={facebook} alt="facebook" />
-              </div>
-              <div className="socials__item">
-                <img
-                  className="socials__image"
-                  src={instagram}
-                  alt="instagram"
-                />
-              </div>
-              <div className="socials__item">
-                <img className="socials__image" src={twitter} alt="twitter" />
-              </div>
-              <div className="socials__item">
-                <img className="socials__image" src={linkedin} alt="linkedin" />
-              </div>
-              <div className="socials__item">
-                <img className="socials__image" src={youtube} alt="youtube" />
-              </div>
-              <div className="socials__item">
-                <img className="socials__image" src={dribble} alt="dribble" />
-              </div>
-            </div>
+            <Socials/>
           </div>
 
           <div className="about__info">
@@ -135,7 +107,22 @@ function App() {
             <div className="about__skills">Gulp, Webpack, Grunt</div>
             <div className="about__skills">GIT Knowledge</div>
           </div>
-          <button className="about__button">Download CV</button>
+          <button className="about__button">
+            Download CV{" "}
+            <svg
+              className="about__button-icon"
+              width="14"
+              height="17"
+              viewBox="0 0 14 17"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M2.33317 12.9523H11.6665V8.28564H12.8332V13.619C12.8332 13.7958 12.7717 13.9654 12.6623 14.0904C12.5529 14.2154 12.4045 14.2856 12.2498 14.2856H1.74984C1.59513 14.2856 1.44675 14.2154 1.33736 14.0904C1.22796 13.9654 1.1665 13.7958 1.1665 13.619V8.28564H2.33317V12.9523ZM8.1665 6.28564H11.0832L6.99984 10.9523L2.9165 6.28564H5.83317V2.28564H8.1665V6.28564Z"
+                fill="#2B2B2B"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
