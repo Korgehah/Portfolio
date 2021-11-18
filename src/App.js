@@ -1,9 +1,77 @@
 import React from 'react';
 import avatar from './assets/images/avatar.png';
+import photo from './assets/images/photo.png';
 import './assets/scss/index.scss';
-import Socials from './components/Socials/index.jsx';
+import Data from './components/Data';
+import Socials from './components/Socials/index';
+import Scales from './components/Scales/index';
+import Skills from './components/Skills/index';
+import HeadOfBlock from './components/HeadOfBlock';
+import ServicesCards from './components/ServicesCards';
+import theme from './assets/images/theme.svg';
+import Navigation from './components/Navigation';
 
 function App() {
+  const MockData = [
+    { title: 'Age:', value: '24' },
+    { title: 'Residence:', value: 'BD' },
+    {
+      title: 'Freelance:',
+      value: 'Available',
+      colorTheme: 'data__value_colored',
+    },
+    { title: 'Address:', value: 'Dhaka, Bangladesh' },
+  ];
+
+  const MockLanguages = [
+    { title: 'Bangla', percent: '100%' },
+    { title: 'English', percent: '80%' },
+    { title: 'Spanish', percent: '60%' },
+  ];
+
+  const MockScale = [
+    { title: 'Html', percent: '90%' },
+    { title: 'CSS', percent: '85%' },
+    { title: 'Js', percent: '80%' },
+    { title: 'PHP', percent: '75%' },
+    { title: 'WordPress', percent: '85%' },
+  ];
+
+  const MockSkills = [
+    { skill: 'Bootstrap, Materialize' },
+    { skill: 'Stylus, Sass, Less' },
+    { skill: 'Gulp, Webpack, Grunt' },
+    { skill: 'GIT Knowledge' },
+  ];
+
+  const MyServices = [
+    {
+      title: 'My Services',
+      description:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    },
+  ];
+
+  const Portfolio = [
+    {
+      title: 'Portfolio',
+      description:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    },
+  ];
+
+  const Blog = [
+    {
+      title: 'Blog',
+      description:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    },
+  ];
+
+  const YourInfo = [{ title: 'Leave Us Your Info', description: '' }];
+
+  const ContactUs = [{ title: 'Contact Information', description: '' }];
+
   return (
     <div className='App'>
       <div className='about'>
@@ -18,97 +86,26 @@ function App() {
           </div>
 
           <div className='about__info'>
-            <div className='data'>
-              <div className='data__name'>Age:</div>
-              <div className='data__value'>24</div>
-            </div>
-            <div className='data'>
-              <div className='data__name'>Residence:</div>
-              <div className='data__value'>BD</div>
-            </div>
-            <div className='data'>
-              <div className='data__name'>Freelance:</div>
-              <div className='data__value data__value_colored'>Available</div>
-            </div>
-            <div className='data'>
-              <div className='data__name'>Address:</div>
-              <div className='data__value'>Dhaka,Bangladesh</div>
-            </div>
+            <Data mock={MockData} />
           </div>
 
           <div className='about__info'>
             <h2 className='about__title'>Languages</h2>
-            <div className='range'>
-              <div className='range__title'>Bangla</div>
-              <div className='range__percent'>100%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
-            <div className='range'>
-              <div className='range__title'>English</div>
-              <div className='range__percent'>80%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
-            <div className='range'>
-              <div className='range__title'>Spanish</div>
-              <div className='range__percent'>60%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
+            <Scales mock={MockLanguages} />
           </div>
 
           <div className='about__info'>
             <h2 className='about__title'>Skills</h2>
-            <div className='range'>
-              <div className='range__title'>Html</div>
-              <div className='range__percent'>90%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
-            <div className='range'>
-              <div className='range__title'>CSS</div>
-              <div className='range__percent'>85%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
-            <div className='range'>
-              <div className='range__title'>Js</div>
-              <div className='range__percent'>80%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
-            <div className='range'>
-              <div className='range__title'>PHP</div>
-              <div className='range__percent'>75%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
-            <div className='range'>
-              <div className='range__title'>WordPress</div>
-              <div className='range__percent'>85%</div>
-              <div className='range__progress'>
-                <div className='range__line'></div>
-              </div>
-            </div>
+            <Scales mock={MockScale} />
           </div>
 
           <div className='about__info'>
             <h2 className='about__title'>Extra skills</h2>
-            <div className='about__skills'>Bootstrap, Materialize</div>
-            <div className='about__skills'>Stylus, Sass, Less</div>
-            <div className='about__skills'>Gulp, Webpack, Grunt</div>
-            <div className='about__skills'>GIT Knowledge</div>
+            <Skills mock={MockSkills} />
           </div>
-          <button className='about__button'>
-            Download CV{' '}
+
+          <button className='button about__button'>
+            Download CV
             <svg
               className='about__button-icon'
               width='14'
@@ -124,6 +121,47 @@ function App() {
             </svg>
           </button>
         </div>
+      </div>
+
+      <div className='container'>
+        <div className='banner'>
+          <div className='banner__wrapper'>
+            <div className='banner__info'>
+              <h1 className='banner__name'>
+                I'm Rayan Adlrdard
+                <br />
+                <span className='banner__text banner__text_colored'>
+                  Front-end
+                </span>{' '}
+                Developer
+              </h1>
+              <p className='banner__description'>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
+                volutpat feugiat placerat lobortis. Natoque rutrum semper sed
+                suspendisse nunc lectus.
+              </p>
+            </div>
+            <div className='banner__photo-container'>
+              <img className='banner__photo' src={photo} alt='my_photo' />
+            </div>
+          </div>
+        </div>
+
+        <section className='services'>
+          <HeadOfBlock
+            head={{
+              title: 'My Services',
+              description:
+                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+            }}
+          />
+          <ServicesCards />
+        </section>
+      </div>
+
+      <div className='navigation'>
+          <img className='navigation__theme' src={theme} alt='theme' />
+         <Navigation/>
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import twitter from '../../assets/images/twitter.svg';
 import linkedin from '../../assets/images/linkedin.svg';
 import youtube from '../../assets/images/youtube.svg';
 import dribbble from '../../assets/images/dribbble.svg';
-// Если уж решил закидывать images в папку src, то импорть их, а не строкой определяй
 
 const SocialItem = ({ src, alt, href }) => {
   return (
