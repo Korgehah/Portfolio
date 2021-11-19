@@ -1,0 +1,42 @@
+.portfolio {
+    &__cards {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 32%);
+        position: relative;
+    }
+
+    &__wrapper {
+        margin: 0 auto;
+    }
+
+    &__card-image {
+        width: 310px;
+        height: 300px;
+    }
+
+    &__cover {
+        background-color: $color-1;
+        z-index: 1;
+        width: 310px;
+        height: 300px;
+        position: absolute;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0.95;
+        }
+
+        &::before {
+            content: '';
+            background: url('../../assets/images/plus.svg') no-repeat;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

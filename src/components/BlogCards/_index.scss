@@ -1,0 +1,49 @@
+.blog {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 310px);
+    gap: 20px;
+  }
+
+  &__card {
+    &-container {
+      display: flex;
+    }
+
+    &-content {
+      padding: 25px 17px 16px 25px;
+      background-color: $color-9;
+    }
+
+    &-title {
+      margin: 0 0 8px;
+      font-size: $font-main-size;
+      font-weight: $font-medium-weight;
+    }
+
+    &-description {
+      margin: 0 0 9px;
+      font-size: $font-small-size;
+    }
+  }
+
+  &__source {
+    text-decoration: none;
+    color: $color-1;
+    font-weight: $font-medium-weight;
+    transition: color 0.3s ease-in-out;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        border: solid $color-1;
+        border-width: 0 2px 2px 0;
+        padding: 2px;
+        transform: rotate(-45deg);
+        transition: color 0.3s ease-in-out;
+        top: 10px;
+        right: -15px;
+      }
+  }
+}

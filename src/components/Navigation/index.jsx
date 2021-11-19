@@ -6,9 +6,9 @@ import Blog from '../../assets/images/Blog.svg';
 import Portfolio from '../../assets/images/Portfolio.svg';
 
 
-const NavigationItem = ({src, alt}) => {
+const NavigationItem = ({src, alt, href}) => {
   return (
-    <a href="#" className='navigation__item'>
+    <a href={href} className='navigation__item'>
     <div className='navigation__prompt'>{alt}</div>
         <img className='navigation__image' src={src} alt={alt}/>
     </a>
@@ -17,11 +17,11 @@ const NavigationItem = ({src, alt}) => {
 
 const Navigation = () => {
    const MockNavigation = [
-        { src: Home, alt: 'Home'},
-        { src: Services, alt: 'Services'},
-        { src: Portfolio, alt: 'Portfolio'},
-        { src: Blog, alt: 'Blog'},
-        { src: Contact, alt: 'Contact'}
+        { src: Home, alt: 'Home', href: ''},
+        { src: Services, alt: 'Services', href: ''},
+        { src: Portfolio, alt: 'Portfolio', href: ''},
+        { src: Blog, alt: 'Blog', href: ''},
+        { src: Contact, alt: 'Contact', href: ''}
     ];
   return (
     <nav className='navigation__container'>

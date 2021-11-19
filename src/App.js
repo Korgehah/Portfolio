@@ -10,6 +10,9 @@ import HeadOfBlock from './components/HeadOfBlock';
 import ServicesCards from './components/ServicesCards';
 import theme from './assets/images/theme.svg';
 import Navigation from './components/Navigation';
+import PortfolioCards from './components/PortfolioCards';
+import BlogCards from './components/BlogCards';
+import ContactsInfo from './components/ContactsInfo';
 
 function App() {
   const MockData = [
@@ -43,34 +46,6 @@ function App() {
     { skill: 'Gulp, Webpack, Grunt' },
     { skill: 'GIT Knowledge' },
   ];
-
-  const MyServices = [
-    {
-      title: 'My Services',
-      description:
-        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-    },
-  ];
-
-  const Portfolio = [
-    {
-      title: 'Portfolio',
-      description:
-        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-    },
-  ];
-
-  const Blog = [
-    {
-      title: 'Blog',
-      description:
-        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-    },
-  ];
-
-  const YourInfo = [{ title: 'Leave Us Your Info', description: '' }];
-
-  const ContactUs = [{ title: 'Contact Information', description: '' }];
 
   return (
     <div className='App'>
@@ -157,14 +132,121 @@ function App() {
           />
           <ServicesCards />
         </section>
+
+        <section className='portfolio'>
+          <HeadOfBlock
+            head={{
+              title: 'Portfolio',
+              description:
+                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+            }}
+          />
+          <div className='portfolio__menu'>
+            <span className='portfolio__menu-item portfolio__menu-item_colored'>
+              All Categories
+            </span>
+            <span className='portfolio__menu-item'>UI Design</span>
+            <span className='portfolio__menu-item'>Web Templates</span>
+            <span className='portfolio__menu-item'>Logo</span>
+            <span className='portfolio__menu-item'>Branding</span>
+          </div>
+          <PortfolioCards />
+        </section>
+
+        <section className='blog'>
+          <HeadOfBlock
+            head={{
+              title: 'Blog',
+              description:
+                'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+            }}
+          />
+          <BlogCards />
+        </section>
+
+        <section className='contacts'>
+          <div className='contacts__form-container'>
+            <HeadOfBlock
+              head={{
+                title: 'Leave Us Your Info',
+                description: '',
+              }}
+            />
+            <form action='' method='post' className='contacts__form'>
+              <label className='contacts__label' for='name'>
+                Your Full Name
+                <span className='contacts__label contacts__label_required'>
+                  Required
+                </span>
+              </label>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                className='contacts__input'
+                required
+              />
+              <label className='contacts__label' for='email'>
+                Your Email
+                <span className='contacts__label contacts__label_required'>
+                  Required
+                </span>
+              </label>
+              <input
+                type='email'
+                name='email'
+                id='email'
+                className='contacts__input'
+                required
+              />
+              <label className='contacts__label' for='subject'>
+                Subject
+              </label>
+              <input
+                type='text'
+                name='subject'
+                id='subject'
+                className='contacts__input'
+              />
+              <label className='contacts__label' for='message'>
+                Your Message
+              </label>
+              <input
+                type='text'
+                name='message'
+                id='message'
+                className='contacts__input contacts__input_big'
+              />
+            </form>
+          </div>
+          <div className='contacts__info'>
+            <HeadOfBlock
+              head={{
+                title: 'Contact Information',
+                description: '',
+              }}
+            />
+            <ContactsInfo />
+          </div>
+        </section>
+
+        <div className='map'></div>
+
+        <div className='copyright'>2021 All Rights Reserved.Ojjomedia</div>
       </div>
 
       <div className='navigation'>
-          <img className='navigation__theme' src={theme} alt='theme' />
-         <Navigation/>
+        <img className='navigation__theme' src={theme} alt='theme' />
+        <Navigation />
       </div>
     </div>
   );
 }
 
 export default App;
+<script
+  type='text/javascript'
+  charset='utf-8'
+  async
+  src='https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abf6b5d3e8867fa4a758f97f4999d45febcf4bec3adb2e297d3802606c72f5802&amp;width=970&amp;height=300&amp;lang=ru_RU&amp;scroll=true'
+></script>;
