@@ -1,19 +1,24 @@
 .socials {
+  display: flex;
+  justify-content: space-between;
+
+  &__item {
+    width: 24px;
+    height: 24px;
+    background-color: $color-1;
+    border-radius: 50%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  
-    &__item {
-      width: 24px;
-      height: 24px;
-      background-color: $color-1;
-      border-radius: 50%;
-      display: flex;
-    }
-  
-    &__image {
-      width: 14px;
-      height: 14px;
-      margin: auto;
+
+    &:hover .socials__image {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+        hue-rotate(93deg) brightness(103%) contrast(103%);
     }
   }
+
+  &__image {
+    width: 14px;
+    height: 14px;
+    margin: auto;
+    transition: filter 0.2s ease-in-out;
+  }
+}

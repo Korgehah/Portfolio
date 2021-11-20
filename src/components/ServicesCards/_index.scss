@@ -1,35 +1,33 @@
 .services {
-    &__cards {
-        display: grid;
-        grid-template-columns: repeat(3, 32%);
-        gap: 20px;
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    gap: 20px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-9;
+    padding: 28px 0 42px;
+
+    &-image {
+      width: 68px;
+      height: 68px;
+      margin: 0 0 26px;
     }
 
-    &__card {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        background-color: $color-9;
-        padding: 28px 0 42px;
-
-        &-image {
-            width: 68px;
-            height: 68px;
-            margin: 0 auto 26px;
-        }
-
-        &-title {
-            font-weight: $font-medium-weight;
-            font-size: $font-main-size;
-            margin: 0 0 15px;
-        }
-
-        &-subtitle {
-            font-size: $font-small-size;
-            color: $color-6;
-            margin: 0;
-        }
-
+    &-title {
+      font-weight: $font-weight-medium;
+      font-size: $font-size-main;
+      margin: 0 0 15px;
     }
+
+    &-subtitle {
+      font-size: $font-size-small;
+      color: $color-6;
+      margin: 0;
+    }
+  }
 }

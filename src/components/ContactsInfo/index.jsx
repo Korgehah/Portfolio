@@ -2,19 +2,6 @@ import React from 'react';
 import location from '../../assets/images/location.svg';
 import mail from '../../assets/images/mail.svg';
 
-
-const MockAddress = [
-    {title: 'Country:', value: 'Bangladesh'},
-    {title: 'City:', value: 'Dhaka'},
-    {title: 'Street:', value: '35 Vhatara, Badda'},
-];
-
-const MockMail = [
-    {title: 'Email:', value: 'Youremail@Gmail.com'},
-    {title: 'Skype:', value: '@Yourusername'},
-    {title: 'Telegram:', value: '@Yourusername'},
-];
-
 const ContactsData = ({title, value}) => {
   return (
     <div className='contacts__data'>
@@ -38,11 +25,11 @@ const ContactsItem = ({mock, src, alt}) => {
   );
 };
 
-const ContactsInfo = () => {
+const ContactsInfo = ({mockAddress, mockMail}) => {
   return (
     <div className='contacts__cards'>
-        <ContactsItem mock={MockAddress} src={location} alt='location' />
-        <ContactsItem mock={MockMail} src={mail} alt='mail'/>
+        <ContactsItem mock={mockAddress} src={location} alt='location' />
+        <ContactsItem mock={mockMail} src={mail} alt='mail'/>
     </div>
   );
 };

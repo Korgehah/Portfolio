@@ -17,33 +17,32 @@
 
     &-title {
       margin: 0 0 8px;
-      font-size: $font-main-size;
-      font-weight: $font-medium-weight;
+      font-size: $font-size-main;
+      font-weight: $font-weight-medium;
     }
 
     &-description {
       margin: 0 0 9px;
-      font-size: $font-small-size;
+      font-size: $font-size-small;
     }
   }
 
   &__source {
     text-decoration: none;
     color: $color-1;
-    font-weight: $font-medium-weight;
-    transition: color 0.3s ease-in-out;
+    font-weight: $font-weight-medium;
     position: relative;
 
     &::after {
-        content: '';
-        position: absolute;
-        border: solid $color-1;
-        border-width: 0 2px 2px 0;
-        padding: 2px;
-        transform: rotate(-45deg);
-        transition: color 0.3s ease-in-out;
-        top: 10px;
-        right: -15px;
-      }
+      content: '';
+      position: absolute;
+      border: solid $color-1;
+      border-width: 0 2px 2px 0;
+      padding: 2px;
+      transform: rotate(-45deg);
+      transition: color 0.3s ease-in-out;
+      top: 10px;
+      right: -15px;
+    }
   }
 }

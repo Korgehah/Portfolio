@@ -2,7 +2,7 @@ import React from 'react';
 
 const ScaleItem = ({ title, percent }) => {
   return (
-    <div className='range'>
+    <div className='range__item'>
       <div className='range__title'>{title}</div>
       <div className='range__percent'>{percent}</div>
       <div className='range__progress'>
@@ -14,7 +14,7 @@ const ScaleItem = ({ title, percent }) => {
 
 const Scales = ({mock}) => {
   return (
-    <div>
+    <div className='range'>
       {mock.map((range, index) => (
         <ScaleItem {...range} key={index} />
       ))}

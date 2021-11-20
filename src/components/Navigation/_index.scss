@@ -30,7 +30,7 @@
   &__image {
     width: 18px;
     height: 18px;
-    margin: auto auto;
+    margin: auto;
     transition: filter 0.3s ease-in-out;
   }
 
@@ -54,7 +54,7 @@
     &::after {
       content: '';
       position: absolute;
-      border: 8px solid transparent; 
+      border: 8px solid transparent;
       border-top: 14px solid $color-2;
       border-bottom: none;
       top: 19px;

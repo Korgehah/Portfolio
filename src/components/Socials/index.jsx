@@ -1,10 +1,4 @@
 import React from 'react';
-import facebook from '../../assets/images/facebook.svg';
-import instagram from '../../assets/images/instagram.svg';
-import twitter from '../../assets/images/twitter.svg';
-import linkedin from '../../assets/images/linkedin.svg';
-import youtube from '../../assets/images/youtube.svg';
-import dribbble from '../../assets/images/dribbble.svg';
 
 const SocialItem = ({ src, alt, href }) => {
   return (
@@ -14,18 +8,10 @@ const SocialItem = ({ src, alt, href }) => {
   );
 };
 
-const Socials = () => {
-  const MockSocials = [
-    { src: facebook, alt: 'facebook', href: '' },
-    { src: instagram, alt: 'instagram', href: '' },
-    { src: twitter, alt: 'twitter', href: '' },
-    { src: linkedin, alt: 'linkedin', href: '' },
-    { src: youtube, alt: 'youtube', href: '' },
-    { src: dribbble, alt: 'dribble', href: '' },
-  ];
+const Socials = ({mock}) => {
   return (
     <div className='socials'>
-      {MockSocials.map((social, index) => (
+      {mock.map((social, index) => (
         <SocialItem {...social} key={index} />
       ))}
     </div>

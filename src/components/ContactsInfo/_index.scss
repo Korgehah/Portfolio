@@ -37,12 +37,12 @@
       }
 
       &-title {
-          font-size: $font-main-size;
-          font-weight: $font-medium-weight;
+          font-size: $font-size-main;
+          font-weight: $font-weight-medium;
       }
 
       &-value {
-          font-size: $font-small-size;
+          font-size: $font-size-small;
       }
   }
 }
