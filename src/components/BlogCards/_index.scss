@@ -32,6 +32,11 @@
     color: $color-1;
     font-weight: $font-weight-medium;
     position: relative;
+    transition: filter 0.3s ease-in-out;
+
+    &:hover {
+      filter: invert(100%) saturate(30%);
+    }
 
     &::after {
       content: '';
