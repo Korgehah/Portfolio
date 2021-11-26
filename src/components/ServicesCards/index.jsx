@@ -5,14 +5,14 @@ const ServicesCard = ({ src, alt, title, subtitle, description }) => {
     <div className='services__card'>
       <img className='services__card-image' src={src} alt={alt} />
       <h2 className='services__card-title'>{title}</h2>
-      <h2 className='services__card-title services__card-title_hidden'>
-        {title}
-      </h2>
       <p className='services__card-subtitle'>{subtitle}</p>
-      <p className='services__card-description'>{description}</p>
-      <a href={src} className='services__card-order'>
-        Order now
-      </a>
+      <div className='services__card services__card_hidden'>
+        <h2 className='services__card-title'>{title}</h2>
+        <p className='services__card-description'>{description}</p>
+        <a href={src} className='services__card-order'>
+          Order now
+        </a>
+      </div>
     </div>
   );
 };

@@ -44,6 +44,8 @@ import services from './assets/images/Services.svg';
 import blog from './assets/images/Blog.svg';
 import portfolio from './assets/images/Portfolio.svg';
 
+// import { Scrollbar } from 'react-scrollbars-custom';
+
 const About = ({ socials, data, languages, scale, skills }) => {
   return (
     <div className='about'>
