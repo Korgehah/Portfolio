@@ -10,10 +10,10 @@ const DataItem = ({ title, value, colorTheme }) => {
   );
 };
 
-const Data = ({ mock }) => {
+const Data = ({ dataset }) => {
   return (
     <div className='data'>
-      {mock.map((data, index) => (
+      {dataset.map((data, index) => (
         <DataItem {...data} key={index} />
       ))}
     </div>

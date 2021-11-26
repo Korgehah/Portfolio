@@ -1,10 +1,10 @@
 import React from 'react';
 
-const HeadOfBlock = ({head}) => {
+const HeadOfBlock = ({ title, description }) => {
   return (
     <div className='head'>
-      <h1 id={head.id} className='head__title'>{head.title}</h1>
-      <p className='head__description'>{head.description}</p>
+      <h1 className='head__title'>{title}</h1>
+      {description && <p className='head__description'>{description}</p>}
     </div>
   );
 };

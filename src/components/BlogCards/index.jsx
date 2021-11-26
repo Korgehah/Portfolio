@@ -17,11 +17,11 @@ const BlogCard = ({ src, alt, title, description, href }) => {
   );
 };
 
-const BlogCards = ({mock}) => {
+const BlogCards = ({ cards }) => {
   return (
     <div className='blog__cards'>
-      {mock.map((blog, index) => (
-        <BlogCard {...blog} key={index} />
+      {cards.map((card, index) => (
+        <BlogCard {...card} key={index} />
       ))}
     </div>
   );

@@ -1,4 +1,12 @@
 .contacts {
+  & .head {
+    align-items: flex-start;
+
+    &__title {
+      margin: 0;
+    }
+  }
+
   &__card {
     margin: 0 0 18px;
     padding: 25px 25px 15px;
@@ -7,18 +15,18 @@
     box-sizing: border-box;
 
     &-container {
-        display: flex;
-        width: 40px;
-        height: 40px;
-        margin: 0 auto 30px;
-        background-color: $color-1;
-        border-radius: 50%;
+      display: flex;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 30px;
+      background-color: $color-1;
+      border-radius: 50%;
     }
 
     &-image {
-        width: 18px;
-        height: 18px;
-        margin: auto;
+      width: 18px;
+      height: 18px;
+      margin: auto;
     }
 
     &:last-child {
@@ -27,22 +35,22 @@
   }
 
   &__data {
-      display: flex;
-      justify-content: space-between;
-      margin: 0 0 16px;
-      color: $color-6;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 16px;
+    color: $color-6;
 
-      &:last-child {
-          margin: 0;
-      }
+    &:last-child {
+      margin: 0;
+    }
 
-      &-title {
-          font-size: $font-size-main;
-          font-weight: $font-weight-medium;
-      }
+    &-title {
+      font-size: $font-size-main;
+      font-weight: $font-weight-medium;
+    }
 
-      &-value {
-          font-size: $font-size-small;
-      }
+    &-value {
+      font-size: $font-size-small;
+    }
   }
 }

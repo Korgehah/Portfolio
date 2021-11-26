@@ -44,7 +44,7 @@ import services from './assets/images/Services.svg';
 import blog from './assets/images/Blog.svg';
 import portfolio from './assets/images/Portfolio.svg';
 
-const About = ({ mockPage }) => {
+const About = ({ socials, data, languages, scale, skills }) => {
   return (
     <div className='about'>
       <div className='about__wrapper'>
@@ -54,26 +54,26 @@ const About = ({ mockPage }) => {
           </div>
           <p className='about__name'>Rayan Adlardard</p>
           <p className='about__speciality'>Front-End Developer</p>
-          <Socials mock={mockPage.socials} />
+          <Socials socials={socials} />
         </div>
 
         <div className='about__info'>
-          <Data mock={mockPage.data} />
+          <Data dataset={data} />
         </div>
 
         <div className='about__info'>
           <h2 className='about__title'>Languages</h2>
-          <Scales mock={mockPage.languages} />
+          <Scales scaleData={languages} />
         </div>
 
         <div className='about__info'>
           <h2 className='about__title'>Skills</h2>
-          <Scales mock={mockPage.scale} />
+          <Scales scaleData={scale} />
         </div>
 
         <div className='about__info'>
           <h2 className='about__title'>Extra skills</h2>
-          <Skills mock={mockPage.skills} />
+          <Skills skills={skills} />
         </div>
 
         <Button addClass='about__button'>
@@ -140,31 +140,19 @@ const Banner = () => {
   );
 };
 
-const Services = ({ mockPage }) => {
+const Services = ({ header, cards }) => {
   return (
     <section id='services' className='layout__section services'>
-      <HeadOfBlock
-        head={{
-          title: 'My Services',
-          description:
-            'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-        }}
-      />
-      <ServicesCards mock={mockPage.services} />
+      <HeadOfBlock {...header} />
+      <ServicesCards cards={cards} />
     </section>
   );
 };
 
-const Portfolio = ({ mockPage }) => {
+const Portfolio = ({ header, cards }) => {
   return (
     <section id='portfolio' className='layout__section portfolio'>
-      <HeadOfBlock
-        head={{
-          title: 'Portfolio',
-          description:
-            'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-        }}
-      />
+      <HeadOfBlock {...header} />
       <div className='portfolio__menu'>
         <span className='portfolio__menu-item'>All Categories</span>
         <span className='portfolio__menu-item'>UI Design</span>
@@ -172,42 +160,29 @@ const Portfolio = ({ mockPage }) => {
         <span className='portfolio__menu-item'>Logo</span>
         <span className='portfolio__menu-item'>Branding</span>
       </div>
-      <PortfolioCards mock={mockPage.portfolio} />
+      <PortfolioCards cards={cards} />
     </section>
   );
 };
 
-const Blog = ({ mockPage }) => {
+const Blog = ({ header, cards }) => {
   return (
     <section id='blog' className='layout__section blog'>
-      <HeadOfBlock
-        head={{
-          title: 'Blog',
-          description:
-            'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-        }}
-      />
-      <BlogCards mock={mockPage.blog} />
+      <HeadOfBlock {...header} />
+      <BlogCards cards={cards} />
     </section>
   );
 };
 
-const Contacts = ({mockPage}) => {
+const Contacts = ({ infoHeader, contactsHeader, address, mail }) => {
   return (
     <section id='contacts' className='layout__section contacts'>
       <div className='contacts__form-container'>
-        <HeadOfBlock
-          head={{
-            title: 'Leave Us Your Info',
-            description: '',
-          }}
-        />
+        <HeadOfBlock {...infoHeader} />
         <form action='' method='post' className='contacts__form'>
           <label className='contacts__label' for='name'>
             Your Full Name
-            <span className='contacts__label contacts__label_required'>
-              Required
-            </span>
+            <span className='contacts__required'>Required</span>
           </label>
           <input
             maxLength='50'
@@ -219,9 +194,7 @@ const Contacts = ({mockPage}) => {
           />
           <label className='contacts__label' for='email'>
             Your Email
-            <span className='contacts__label contacts__label_required'>
-              Required
-            </span>
+            <span className='contacts__required'>Required</span>
           </label>
           <input
             maxLength='40'
@@ -254,13 +227,8 @@ const Contacts = ({mockPage}) => {
         </form>
       </div>
       <div className='contacts__info'>
-        <HeadOfBlock
-          head={{
-            title: 'Contact Information',
-            description: '',
-          }}
-        />
-        <ContactsInfo mockAddress={mockPage.address} mockMail={mockPage.mail}/>
+        <HeadOfBlock {...contactsHeader} />
+        <ContactsInfo address={address} mail={mail} />
       </div>
     </section>
   );
@@ -284,169 +252,202 @@ const Copyright = () => {
   return <div className='copyright'>2021 All Rights Reserved.Ojjomedia</div>;
 };
 
-const Menu = ({mockPage}) => {
+const Menu = ({ mockNavigation }) => {
   return (
     <div className='navigation'>
       <div className='navigation__wrapper'>
         <img className='navigation__theme' src={theme} alt='theme' />
-        <Navigation mock={mockPage.nav}/>
+        <Navigation nav={mockNavigation} />
       </div>
     </div>
   );
 };
 
 function App() {
-  const MockPage = {
-    socials: [
-      { src: facebook, alt: 'facebook', href: '' },
-      { src: instagram, alt: 'instagram', href: '' },
-      { src: twitter, alt: 'twitter', href: '' },
-      { src: linkedin, alt: 'linkedin', href: '' },
-      { src: youtube, alt: 'youtube', href: '' },
-      { src: dribbble, alt: 'dribble', href: '' },
-    ],
+  const Data = {
+    about: {
+      socials: [
+        { src: facebook, alt: 'facebook', href: '' },
+        { src: instagram, alt: 'instagram', href: '' },
+        { src: twitter, alt: 'twitter', href: '' },
+        { src: linkedin, alt: 'linkedin', href: '' },
+        { src: youtube, alt: 'youtube', href: '' },
+        { src: dribbble, alt: 'dribble', href: '' },
+      ],
 
-    data: [
-      { title: 'Age:', value: '24' },
-      { title: 'Residence:', value: 'BD' },
-      {
-        title: 'Freelance:',
-        value: 'Available',
-        colorTheme: 'data__value_colored',
-      },
-      { title: 'Address:', value: 'Dhaka, Bangladesh' },
-    ],
-    languages: [
-      { title: 'Bangla', percent: '100%' },
-      { title: 'English', percent: '80%' },
-      { title: 'Spanish', percent: '60%' },
-    ],
-    scale: [
-      { title: 'Html', percent: '90%' },
-      { title: 'CSS', percent: '85%' },
-      { title: 'Js', percent: '80%' },
-      { title: 'PHP', percent: '75%' },
-      { title: 'WordPress', percent: '85%' },
-    ],
-    skills: [
-      { skill: 'Bootstrap, Materialize' },
-      { skill: 'Stylus, Sass, Less' },
-      { skill: 'Gulp, Webpack, Grunt' },
-      { skill: 'GIT Knowledge' },
-    ],
-    services: [
-      {
-        src: webDev,
-        alt: 'Web Development',
-        title: 'Web Development',
-        subtitle: 'Blog, E-Commerce',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-      },
-      {
-        src: uiDesign,
-        alt: 'UI/UX Design',
-        title: 'UI/UX Design',
-        subtitle: 'Mobile app, Website design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-      },
-      {
-        src: soundDesign,
-        alt: 'Sound Design',
-        title: 'Sound Design',
-        subtitle: 'Voice over, Beat Making',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-      },
-      {
-        src: gameDev,
-        alt: 'Game Development',
-        title: 'Game Design',
-        subtitle: 'Character Design, Props & Objects',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-      },
-      {
-        src: photography,
-        alt: 'Photography',
-        title: 'Photography',
-        subtitle: 'Portrait, Product photography',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-      },
-      {
-        src: advertisment,
-        alt: 'Advertisment',
-        title: 'Advertising',
-        subtitle: 'Lorem ipsum dolor sit',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-      },
-    ],
-    portfolio: [
-      { src: img1, alt: 'project', href: '' },
-      { src: img2, alt: 'project', href: '' },
-      { src: img3, alt: 'project', href: '' },
-      { src: img4, alt: 'project', href: '' },
-      { src: img5, alt: 'project', href: '' },
-      { src: img6, alt: 'project', href: '' },
-      { src: img7, alt: 'project', href: '' },
-      { src: img8, alt: 'project', href: '' },
-      { src: img9, alt: 'project', href: '' },
-    ],
-    blog: [
-      {
-        src: img1,
-        alt: 'blog',
-        title: 'How To Make Web Templates',
+      data: [
+        { title: 'Age:', value: '24' },
+        { title: 'Residence:', value: 'BD' },
+        {
+          title: 'Freelance:',
+          value: 'Available',
+          colorTheme: 'data__value_colored',
+        },
+        { title: 'Address:', value: 'Dhaka, Bangladesh' },
+      ],
+      languages: [
+        { title: 'Bangla', percent: '100%' },
+        { title: 'English', percent: '80%' },
+        { title: 'Spanish', percent: '60%' },
+      ],
+      scale: [
+        { title: 'Html', percent: '90%' },
+        { title: 'CSS', percent: '85%' },
+        { title: 'Js', percent: '80%' },
+        { title: 'PHP', percent: '75%' },
+        { title: 'WordPress', percent: '85%' },
+      ],
+      skills: [
+        { skillName: 'Bootstrap, Materialize' },
+        { skillName: 'Stylus, Sass, Less' },
+        { skillName: 'Gulp, Webpack, Grunt' },
+        { skillName: 'GIT Knowledge' },
+      ],
+    },
+    services: {
+      header: {
+        title: 'My Services',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-        href: '',
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
       },
-      {
-        src: img2,
-        alt: 'blog',
-        title: 'Make Business Card',
+      cards: [
+        {
+          src: webDev,
+          alt: 'Web Development',
+          title: 'Web Development',
+          subtitle: 'Blog, E-Commerce',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+        },
+        {
+          src: uiDesign,
+          alt: 'UI/UX Design',
+          title: 'UI/UX Design',
+          subtitle: 'Mobile app, Website design',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+        },
+        {
+          src: soundDesign,
+          alt: 'Sound Design',
+          title: 'Sound Design',
+          subtitle: 'Voice over, Beat Making',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+        },
+        {
+          src: gameDev,
+          alt: 'Game Development',
+          title: 'Game Design',
+          subtitle: 'Character Design, Props & Objects',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+        },
+        {
+          src: photography,
+          alt: 'Photography',
+          title: 'Photography',
+          subtitle: 'Portrait, Product photography',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+        },
+        {
+          src: advertisment,
+          alt: 'Advertisment',
+          title: 'Advertising',
+          subtitle: 'Lorem ipsum dolor sit',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+        },
+      ],
+    },
+    portfolio: {
+      header: {
+        title: 'Portfolio',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-        href: '',
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
       },
-      {
-        src: img3,
-        alt: 'blog',
-        title: 'How To Make Flyer Design',
+      cards: [
+        { src: img1, alt: 'project', href: '' },
+        { src: img2, alt: 'project', href: '' },
+        { src: img3, alt: 'project', href: '' },
+        { src: img4, alt: 'project', href: '' },
+        { src: img5, alt: 'project', href: '' },
+        { src: img6, alt: 'project', href: '' },
+        { src: img7, alt: 'project', href: '' },
+        { src: img8, alt: 'project', href: '' },
+        { src: img9, alt: 'project', href: '' },
+      ],
+    },
+    blog: {
+      header: {
+        title: 'Blog',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-        href: '',
+          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
       },
-    ],
-    address: [
-      { title: 'Country:', value: 'Bangladesh' },
-      { title: 'City:', value: 'Dhaka' },
-      { title: 'Street:', value: '35 Vhatara, Badda' },
-    ],
-    mail: [
-      { title: 'Email:', value: 'Youremail@Gmail.com' },
-      { title: 'Skype:', value: '@Yourusername' },
-      { title: 'Telegram:', value: '@Yourusername' },
-    ],
+      cards: [
+        {
+          src: img1,
+          alt: 'blog',
+          title: 'How To Make Web Templates',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+          href: '',
+        },
+        {
+          src: img2,
+          alt: 'blog',
+          title: 'Make Business Card',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+          href: '',
+        },
+        {
+          src: img3,
+          alt: 'blog',
+          title: 'How To Make Flyer Design',
+          description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+          href: '',
+        },
+      ],
+    },
+    contacts: {
+      infoHeader: { title: 'Leave Us Your Info' },
+      contactsHeader: { title: 'Contact Information' },
+      address: [
+        { title: 'Country:', value: 'Bangladesh' },
+        { title: 'City:', value: 'Dhaka' },
+        { title: 'Street:', value: '35 Vhatara, Badda' },
+      ],
+      mail: [
+        { title: 'Email:', value: 'Youremail@Gmail.com' },
+        { title: 'Skype:', value: '@Yourusername' },
+        { title: 'Telegram:', value: '@Yourusername' },
+      ],
+    },
+
     nav: [
-      { src: home, alt: 'Home', href: '#home'},
-      { src: services, alt: 'Services', href: '#services'},
-      { src: portfolio, alt: 'Portfolio', href: '#portfolio'},
-      { src: blog, alt: 'Blog', href: '#blog'},
-      { src: contacts, alt: 'Contacts', href: '#contacts'}
-  ],
+      { src: home, alt: 'Home', href: '#home' },
+      { src: services, alt: 'Services', href: '#services' },
+      { src: portfolio, alt: 'Portfolio', href: '#portfolio' },
+      { src: blog, alt: 'Blog', href: '#blog' },
+      { src: contacts, alt: 'Contacts', href: '#contacts' },
+    ],
   };
-
   return (
     <div className='layout'>
-      <About mockPage={MockPage} />
+      <About {...Data.about} />
       <main className='layout__main'>
         <Banner />
-        <Services mockPage={MockPage} />
-        <Portfolio mockPage={MockPage} />
-        <Blog mockPage={MockPage} />
-        <Contacts mockPage={MockPage} />
+        <Services {...Data.services} />
+        <Portfolio {...Data.portfolio} />
+        <Blog {...Data.blog} />
+        <Contacts {...Data.contacts} />
         <Map />
         <Copyright />
       </main>
-      <Menu mockPage={MockPage}/>
+      <Menu mockNavigation={Data.nav} />
     </div>
   );
 }

@@ -6,16 +6,16 @@ const ScaleItem = ({ title, percent }) => {
       <div className='range__title'>{title}</div>
       <div className='range__percent'>{percent}</div>
       <div className='range__progress'>
-        <div className='range__line' style={{width: percent}}/>
+        <div className='range__line' style={{ width: percent }} />
       </div>
     </div>
   );
 };
 
-const Scales = ({mock}) => {
+const Scales = ({ scaleData }) => {
   return (
     <div className='range'>
-      {mock.map((range, index) => (
+      {scaleData.map((range, index) => (
         <ScaleItem {...range} key={index} />
       ))}
     </div>

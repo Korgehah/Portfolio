@@ -8,10 +8,10 @@ const SocialItem = ({ src, alt, href }) => {
   );
 };
 
-const Socials = ({mock}) => {
+const Socials = ({ socials }) => {
   return (
     <div className='socials'>
-      {mock.map((social, index) => (
+      {socials.map((social, index) => (
         <SocialItem {...social} key={index} />
       ))}
     </div>

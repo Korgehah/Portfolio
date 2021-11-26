@@ -1,22 +1,16 @@
 import React from 'react';
 
-const SkillsItem = ({skill}) => {
-  return (
-    <div className='skills__item'>
-    {skill}
-    </div>
-  );
+const SkillsItem = ({ skillName }) => {
+  return <div className='skills__item'>{skillName}</div>;
 };
 
-const Skills = ({mock}) => {
+const Skills = ({ skills }) => {
   return (
     <div className='skills'>
-        {mock.map((skills, index) => (
-            <SkillsItem {...skills} key={index}/>
-        ))}
+      {skills.map((skill, index) => (
+        <SkillsItem {...skill} key={index} />
+      ))}
     </div>
   );
 };
 export default Skills;
-
-
