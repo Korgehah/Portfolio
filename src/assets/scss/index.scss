@@ -33,6 +33,7 @@ body {
   margin-left: auto;
   position: sticky;
   top: 0;
+  height: 100vh;
   max-height: 1333px;
 
   &__wrapper {
@@ -171,22 +172,24 @@ body {
 .navigation {
   margin-right: auto;
   height: 100vh;
-  position: sticky;
   max-height: 1333px;
+  position: sticky;
   top: 0;
 
   &__wrapper {
-    padding: 50px 34px 651px 34px;
+    padding: 50px 34px;
     background-color: $color-9;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    box-sizing: border-box;
   }
 
   &__theme {
     width: 30px;
     height: 30px;
-    margin-bottom: 212px;
+    margin-bottom: 55px;
   }
 }
 
@@ -195,7 +198,7 @@ body {
 
   &__button {
     font-size: 14px;
-    padding: 9px 24px;
+    padding: 9px 23px;
     box-sizing: border-box;
     width: 159px;
     height: 35px;
@@ -209,6 +212,24 @@ body {
     margin-right: 30px;
     width: 570px;
     box-sizing: border-box;
+
+    &-container {
+      height: 754px;
+    }
+
+    &_submited {
+      height: 446px;
+      justify-content: center;
+      align-items: center;
+      font-size: $font-size-main;
+      color: $color-6;
+    }
+  }
+
+  &__submit-button {
+    padding: 0;
+    border: none;
+    width: 159px;
   }
 
   &__label {
@@ -218,27 +239,6 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 0 0 8px;
-  }
-
-  &__input {
-    background-color: $color-7;
-    border: none;
-    height: 50px;
-    margin-bottom: 25px;
-    font-size: $font-size-main;
-    width: 521px;
-    box-sizing: border-box;
-    padding: 0 15px;
-
-    &:focus {
-      outline: none;
-    }
-
-    &_big {
-      height: 210px;
-      padding: 15px;
-      resize: none;
-    }
   }
 }
 

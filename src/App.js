@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+/* map */
+import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 /* scss */
 import './assets/scss/index.scss';
 /* components */
@@ -43,58 +46,62 @@ import contacts from './assets/images/Contact.svg';
 import services from './assets/images/Services.svg';
 import blog from './assets/images/Blog.svg';
 import portfolio from './assets/images/Portfolio.svg';
-
-// import { Scrollbar } from 'react-scrollbars-custom';
+import Input from './components/Input';
+import Textarea from './components/Textarea';
+/* Scrollbar */
+import { Scrollbar } from 'react-scrollbars-custom';
 
 const About = ({ socials, data, languages, scale, skills }) => {
   return (
     <div className='about'>
-      <div className='about__wrapper'>
-        <div className='about__info'>
-          <div className='about__avatar-container'>
-            <img src={avatar} className='about__avatar' alt='avatar' />
+      <Scrollbar style={{ width: '315px', height: '100vh' }}>
+        <div className='about__wrapper'>
+          <div className='about__info'>
+            <div className='about__avatar-container'>
+              <img src={avatar} className='about__avatar' alt='avatar' />
+            </div>
+            <p className='about__name'>Rayan Adlardard</p>
+            <p className='about__speciality'>Front-End Developer</p>
+            <Socials socials={socials} />
           </div>
-          <p className='about__name'>Rayan Adlardard</p>
-          <p className='about__speciality'>Front-End Developer</p>
-          <Socials socials={socials} />
-        </div>
 
-        <div className='about__info'>
-          <Data dataset={data} />
-        </div>
+          <div className='about__info'>
+            <Data dataset={data} />
+          </div>
 
-        <div className='about__info'>
-          <h2 className='about__title'>Languages</h2>
-          <Scales scaleData={languages} />
-        </div>
+          <div className='about__info'>
+            <h2 className='about__title'>Languages</h2>
+            <Scales scaleData={languages} />
+          </div>
 
-        <div className='about__info'>
-          <h2 className='about__title'>Skills</h2>
-          <Scales scaleData={scale} />
-        </div>
+          <div className='about__info'>
+            <h2 className='about__title'>Skills</h2>
+            <Scales scaleData={scale} />
+          </div>
 
-        <div className='about__info'>
-          <h2 className='about__title'>Extra skills</h2>
-          <Skills skills={skills} />
-        </div>
+          <div className='about__info'>
+            <h2 className='about__title'>Extra skills</h2>
+            <Skills skills={skills} />
+          </div>
 
-        <Button addClass='about__button'>
-          Download CV
-          <svg
-            className='about__button-icon'
-            width='14'
-            height='17'
-            viewBox='0 0 14 17'
-            fill='currentColor'
-            xmlns='http://www.w3.org/2000/svg'
-          >
-            <path
-              d='M2.33317 12.9523H11.6665V8.28564H12.8332V13.619C12.8332 13.7958 12.7717 13.9654 12.6623 14.0904C12.5529 14.2154 12.4045 14.2856 12.2498 14.2856H1.74984C1.59513 14.2856 1.44675 14.2154 1.33736 14.0904C1.22796 13.9654 1.1665 13.7958 1.1665 13.619V8.28564H2.33317V12.9523ZM8.1665 6.28564H11.0832L6.99984 10.9523L2.9165 6.28564H5.83317V2.28564H8.1665V6.28564Z'
+          <Button addClass='about__button'>
+            Download CV
+            <svg
+              className='about__button-icon'
+              width='14'
+              height='17'
+              viewBox='0 0 14 17'
               fill='currentColor'
-            />
-          </svg>
-        </Button>
-      </div>
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <path
+                d='M2.33317 12.9523H11.6665V8.28564H12.8332V13.619C12.8332 13.7958 12.7717 13.9654 12.6623 14.0904C12.5529 14.2154 12.4045 14.2856 12.2498 14.2856H1.74984C1.59513 14.2856 1.44675 14.2154 1.33736 14.0904C1.22796 13.9654 1.1665 13.7958 1.1665 13.619V8.28564H2.33317V12.9523ZM8.1665 6.28564H11.0832L6.99984 10.9523L2.9165 6.28564H5.83317V2.28564H8.1665V6.28564Z'
+                fill='currentColor'
+              />
+            </svg>
+          </Button>
+        </div>
+      </Scrollbar>
     </div>
   );
 };
@@ -177,56 +184,77 @@ const Blog = ({ header, cards }) => {
 };
 
 const Contacts = ({ infoHeader, contactsHeader, address, mail }) => {
+  const { register, handleSubmit, errors } = useForm({
+    mode: 'onChange',
+  });
+  const [formIsSubmit, setFormIsSubmit] = useState(false);
+
+  const Form = () => {
+    const onSubmit = (data) => {
+      setTimeout(() => {
+        console.log(data);
+        setFormIsSubmit(true);
+      }, 600);
+    };
+
+    if (formIsSubmit) {
+      return (
+        <div className='contacts__form contacts__form_submited'>
+          Спасибо! Я свяжусь с вами в ближайшее время.
+        </div>
+      );
+    }
+
+    return (
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        action=''
+        method='post'
+        className='contacts__form'
+      >
+        <Input
+          id='name'
+          title='Your Full Name'
+          type='text'
+          name='name'
+          required
+          register={register}
+        />
+
+        <Input
+          id='email'
+          title='Your Email'
+          type='email'
+          name='email'
+          required
+          register={register}
+        />
+        <Input
+          id='subject'
+          title='Subject'
+          name='subject'
+          type='text'
+          register={register}
+        />
+
+        <Textarea
+          id='message'
+          name='message'
+          title='Your Message'
+          register={register}
+        />
+        <button type='submit' className='contacts__submit-button'>
+          <Button addClass='contacts__button'>Send message</Button>
+        </button>
+      </form>
+    );
+  };
+
   return (
     <section id='contacts' className='layout__section contacts'>
       <div className='contacts__form-container'>
         <HeadOfBlock {...infoHeader} />
-        <form action='' method='post' className='contacts__form'>
-          <label className='contacts__label' for='name'>
-            Your Full Name
-            <span className='contacts__required'>Required</span>
-          </label>
-          <input
-            maxLength='50'
-            type='text'
-            name='name'
-            id='name'
-            className='contacts__input'
-            required
-          />
-          <label className='contacts__label' for='email'>
-            Your Email
-            <span className='contacts__required'>Required</span>
-          </label>
-          <input
-            maxLength='40'
-            type='email'
-            name='email'
-            id='email'
-            className='contacts__input'
-            required
-          />
-          <label className='contacts__label' for='subject'>
-            Subject
-          </label>
-          <input
-            maxLength='40'
-            type='text'
-            name='subject'
-            id='subject'
-            className='contacts__input'
-          />
-          <label className='contacts__label' for='message'>
-            Your Message
-          </label>
-          <textarea
-            maxLength='350'
-            name='message'
-            id='message'
-            className='contacts__input contacts__input_big'
-          ></textarea>
-          <Button addClass='contacts__button'>Send message</Button>
-        </form>
+        <Form />
       </div>
       <div className='contacts__info'>
         <HeadOfBlock {...contactsHeader} />
@@ -236,16 +264,27 @@ const Contacts = ({ infoHeader, contactsHeader, address, mail }) => {
   );
 };
 
-const Map = () => {
+const Location = () => {
   return (
     <div className='layout__section map'>
-      <iframe
-        title='map'
-        src='https://yandex.ru/map-widget/v1/?um=constructor%3Abf6b5d3e8867fa4a758f97f4999d45febcf4bec3adb2e297d3802606c72f5802&amp;source=constructor'
-        width='970'
-        height='300'
-        frameborder='0'
-      ></iframe>
+      <YMaps>
+        <Map
+          instanceRef={(ref) => {
+            ref && ref.behaviors.disable('scrollZoom');
+          }}
+          defaultState={{
+            center: [55.75975980555492, 37.705900405895406],
+            zoom: 16,
+          }}
+          style={{
+            width: '970px',
+            height: '300px',
+          }}
+        >
+          <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
+          <ZoomControl />
+        </Map>
+      </YMaps>
     </div>
   );
 };
@@ -446,7 +485,7 @@ function App() {
         <Portfolio {...Data.portfolio} />
         <Blog {...Data.blog} />
         <Contacts {...Data.contacts} />
-        <Map />
+        <Location />
         <Copyright />
       </main>
       <Menu mockNavigation={Data.nav} />
