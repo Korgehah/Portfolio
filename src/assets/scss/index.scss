@@ -213,20 +213,18 @@ body {
     width: 570px;
     box-sizing: border-box;
 
-    &-container {
-      height: 754px;
-    }
-
     &_submited {
       height: 446px;
       justify-content: center;
       align-items: center;
       font-size: $font-size-main;
       color: $color-6;
+      margin-bottom: 233px;
     }
   }
 
   &__submit-button {
+    font: inherit;
     padding: 0;
     border: none;
     width: 159px;
@@ -239,6 +237,15 @@ body {
     display: flex;
     justify-content: space-between;
     margin: 0 0 8px;
+    position: relative;
+
+    &-error {
+      font-size: $font-size-medium;
+      display: flex;
+      margin: 6px 0 0;
+      color: $color-error;
+      justify-content: flex-end;
+    }
   }
 }
 

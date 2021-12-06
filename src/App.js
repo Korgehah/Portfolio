@@ -183,73 +183,73 @@ const Blog = ({ header, cards }) => {
   );
 };
 
-const Contacts = ({ infoHeader, contactsHeader, address, mail }) => {
-  const { register, handleSubmit, errors } = useForm({
+const Form = () => {
+  const [formIsSubmit, setFormIsSubmit] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     mode: 'onChange',
   });
-  const [formIsSubmit, setFormIsSubmit] = useState(false);
-
-  const Form = () => {
-    const onSubmit = (data) => {
-      setTimeout(() => {
-        console.log(data);
-        setFormIsSubmit(true);
-      }, 600);
-    };
-
-    if (formIsSubmit) {
-      return (
-        <div className='contacts__form contacts__form_submited'>
-          Спасибо! Я свяжусь с вами в ближайшее время.
-        </div>
-      );
-    }
-
-    return (
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        action=''
-        method='post'
-        className='contacts__form'
-      >
-        <Input
-          id='name'
-          title='Your Full Name'
-          type='text'
-          name='name'
-          required
-          register={register}
-        />
-
-        <Input
-          id='email'
-          title='Your Email'
-          type='email'
-          name='email'
-          required
-          register={register}
-        />
-        <Input
-          id='subject'
-          title='Subject'
-          name='subject'
-          type='text'
-          register={register}
-        />
-
-        <Textarea
-          id='message'
-          name='message'
-          title='Your Message'
-          register={register}
-        />
-        <button type='submit' className='contacts__submit-button'>
-          <Button addClass='contacts__button'>Send message</Button>
-        </button>
-      </form>
-    );
+  const onSubmit = (data) => {
+    setTimeout(() => {
+      console.log(data);
+      setFormIsSubmit(true);
+    }, 600);
   };
 
+  if (formIsSubmit) {
+    return (
+      <div className='contacts__form contacts__form_submited'>
+        Спасибо! Я свяжусь с вами в ближайшее время.
+      </div>
+    );
+  }
+
+  return (
+    <form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className='contacts__form'
+    >
+      <Input
+        title='Your Full Name'
+        name='name'
+        required
+        register={register}
+        errors={errors}
+        errorText='Enter your name'
+        validationType='name'
+      />
+
+      <Input
+        title='Your Email'
+        name='email'
+        required
+        register={register}
+        errors={errors}
+        errorText='Enter the email address in the format example@example.com'
+        validationType='email'
+      />
+      <Input title='Subject' name='subject' register={register} />
+
+      <Textarea
+        name='message'
+        title='Your Message'
+        required
+        register={register}
+        errors={errors}
+        errorText='Enter your message'
+      />
+      <button type='submit' className='contacts__submit-button'>
+        <Button addClass='contacts__button'>Send message</Button>
+      </button>
+    </form>
+  );
+};
+
+const Contacts = ({ infoHeader, contactsHeader, address, mail }) => {
   return (
     <section id='contacts' className='layout__section contacts'>
       <div className='contacts__form-container'>

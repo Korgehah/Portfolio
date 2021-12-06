@@ -8,7 +8,14 @@
   padding: 0 15px;
 
   &-container {
-    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    min-height: 112px;
+
+    &:last-of-type {
+      min-height: 272px;
+    }
   }
 
   &:focus {
