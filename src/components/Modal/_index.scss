@@ -1,0 +1,118 @@
+.modal {
+  margin: auto;
+  padding: 40px;
+  background-color: $color-9;
+  max-width: 1200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: modalMove 0.3s ease-in-out;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__close {
+    color: $color-2;
+    font-size: $font-size-big;
+    cursor: pointer;
+    width: 33px;
+    height: 33px;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $color-1;
+    }
+  }
+
+  &__wrapper {
+    position: fixed;
+    background: rgb(43, 43, 43, 0.9);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation: modalOpacity 0.2s ease-in-out;
+    overflow-y: scroll;
+
+    &_open {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    &_close {
+      display: none;
+    }
+  }
+
+  &__title {
+    color: $color-2;
+    margin: 0 0 10px;
+    font-size: $font-size-header;
+    line-height: $line-height-header;
+  }
+
+  &__subtitle {
+    color: $color-6;
+    margin: 0 0 20px;
+    text-align: justify;
+  }
+
+  &__feature {
+    color: $color-6;
+    margin: 0 0 10px;
+
+    &_bold {
+      margin: 0 15px 0 0;
+      text-transform: uppercase;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__image {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__button {
+    padding: 13px 0;
+    width: 170px;
+    justify-content: center;
+    font-size: $font-size-small;
+
+    &-link {
+      margin-right: 20px;
+      text-decoration: none;
+      color: $color-2;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@keyframes modalOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalMove {
+  0% {
+    transform: translateY(-400px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

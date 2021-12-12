@@ -17,15 +17,15 @@ import PortfolioCards from './components/PortfolioCards';
 import BlogCards from './components/BlogCards';
 import ContactsInfo from './components/ContactsInfo';
 import Button from './components/Button';
+import Modal from './components/Modal';
 /* images */
 import avatar from './assets/images/avatar.png';
 import photo from './assets/images/photo.png';
-import facebook from './assets/images/facebook.svg';
+import vkontakte from './assets/images/vkontakte.svg';
 import instagram from './assets/images/instagram.svg';
-import twitter from './assets/images/twitter.svg';
 import linkedin from './assets/images/linkedin.svg';
-import youtube from './assets/images/youtube.svg';
-import dribbble from './assets/images/dribbble.svg';
+import github from './assets/images/github.svg';
+import telegram from './assets/images/telegram.svg';
 import webDev from './assets/images/web_development.svg';
 import advertisment from './assets/images/advertisment.svg';
 import gameDev from './assets/images/game_development.svg';
@@ -60,7 +60,7 @@ const About = ({ socials, data, languages, scale, skills }) => {
             <div className='about__avatar-container'>
               <img src={avatar} className='about__avatar' alt='avatar' />
             </div>
-            <p className='about__name'>Rayan Adlardard</p>
+            <p className='about__name'>Evgeny Nikolaev</p>
             <p className='about__speciality'>Front-End Developer</p>
             <Socials socials={socials} />
           </div>
@@ -112,7 +112,7 @@ const Banner = () => {
       <div className='banner__wrapper'>
         <div className='banner__info'>
           <h1 className='banner__name'>
-            I'm Rayan Adlrdard
+            I'm Evgeny Nikolaev
             <br />
             <span className='banner__text banner__text_colored'>
               Front-end
@@ -124,22 +124,24 @@ const Banner = () => {
             volutpat feugiat placerat lobortis. Natoque rutrum semper sed
             suspendisse nunc lectus.
           </p>
-          <Button addClass='banner__button'>
-            Hire me
-            <svg
-              className='banner__button-image'
-              width='16'
-              height='16'
-              viewBox='0 0 16 16'
-              fill='currentColor'
-              xmlns='http://www.w3.org/2000/svg'
-            >
-              <path
-                d='M10.7812 7.33312L7.20517 3.75712L8.14784 2.81445L13.3332 7.99979L8.14784 13.1851L7.20517 12.2425L10.7812 8.66645H2.6665V7.33312H10.7812Z'
+          <a href='#contacts' className='banner__button-container'>
+            <Button addClass='banner__button'>
+              Hire me
+              <svg
+                className='banner__button-image'
+                width='16'
+                height='16'
+                viewBox='0 0 16 16'
                 fill='currentColor'
-              />
-            </svg>
-          </Button>
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M10.7812 7.33312L7.20517 3.75712L8.14784 2.81445L13.3332 7.99979L8.14784 13.1851L7.20517 12.2425L10.7812 8.66645H2.6665V7.33312H10.7812Z'
+                  fill='currentColor'
+                />
+              </svg>
+            </Button>
+          </a>
         </div>
         <div className='banner__photo-container'>
           <img className='banner__photo' src={photo} alt='my_photo' />
@@ -158,18 +160,11 @@ const Services = ({ header, cards }) => {
   );
 };
 
-const Portfolio = ({ header, cards }) => {
+const Portfolio = ({ header, cards, setModal }) => {
   return (
     <section id='portfolio' className='layout__section portfolio'>
       <HeadOfBlock {...header} />
-      <div className='portfolio__menu'>
-        <span className='portfolio__menu-item'>All Categories</span>
-        <span className='portfolio__menu-item'>UI Design</span>
-        <span className='portfolio__menu-item'>Web Templates</span>
-        <span className='portfolio__menu-item'>Logo</span>
-        <span className='portfolio__menu-item'>Branding</span>
-      </div>
-      <PortfolioCards cards={cards} />
+      <PortfolioCards cards={cards} setModal={setModal} />
     </section>
   );
 };
@@ -241,7 +236,7 @@ const Form = () => {
         register={register}
         errors={errors}
         errorText='Enter your message'
-      />
+      ></Textarea>
       <button type='submit' className='contacts__submit-button'>
         <Button addClass='contacts__button'>Send message</Button>
       </button>
@@ -268,22 +263,24 @@ const Location = () => {
   return (
     <div className='layout__section map'>
       <YMaps>
-        <Map
-          instanceRef={(ref) => {
-            ref && ref.behaviors.disable('scrollZoom');
-          }}
-          defaultState={{
-            center: [55.75975980555492, 37.705900405895406],
-            zoom: 16,
-          }}
-          style={{
-            width: '970px',
-            height: '300px',
-          }}
-        >
-          <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
-          <ZoomControl />
-        </Map>
+        <div className='map__container'>
+          <Map
+            instanceRef={(ref) => {
+              ref && ref.behaviors.disable('scrollZoom');
+            }}
+            defaultState={{
+              center: [55.75975980555492, 37.705900405895406],
+              zoom: 16,
+            }}
+            style={{
+              width: '970px',
+              height: '300px',
+            }}
+          >
+            <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
+            <ZoomControl />
+          </Map>
+        </div>
       </YMaps>
     </div>
   );
@@ -308,42 +305,42 @@ function App() {
   const Data = {
     about: {
       socials: [
-        { src: facebook, alt: 'facebook', href: '' },
-        { src: instagram, alt: 'instagram', href: '' },
-        { src: twitter, alt: 'twitter', href: '' },
-        { src: linkedin, alt: 'linkedin', href: '' },
-        { src: youtube, alt: 'youtube', href: '' },
-        { src: dribbble, alt: 'dribble', href: '' },
+        { src: vkontakte, alt: 'vkontakte', href: 'https://vk.com/whontowqis' },
+        {
+          src: instagram,
+          alt: 'instagram',
+          href: 'https://www.instagram.com/whontowqis/',
+        },
+        { src: linkedin, alt: 'linkedin', href: 'https://www.linkedin.com/' },
+        { src: telegram, alt: 'telegram', href: 'https://t.me/eixlu' },
+        {
+          src: github,
+          alt: 'github',
+          href: 'https://github.com/Korgehah?tab=repositories',
+        },
       ],
 
       data: [
-        { title: 'Age:', value: '24' },
-        { title: 'Residence:', value: 'BD' },
+        { title: 'Age:', value: '22' },
+        { title: 'Residence:', value: 'Russia' },
         {
           title: 'Freelance:',
           value: 'Available',
           colorTheme: 'data__value_colored',
         },
-        { title: 'Address:', value: 'Dhaka, Bangladesh' },
+        { title: 'Address:', value: 'Moscow, Russia' },
       ],
       languages: [
-        { title: 'Bangla', percent: '100%' },
-        { title: 'English', percent: '80%' },
-        { title: 'Spanish', percent: '60%' },
+        { title: 'Russian', percent: '100%' },
+        { title: 'English', percent: '70%' },
       ],
       scale: [
         { title: 'Html', percent: '90%' },
         { title: 'CSS', percent: '85%' },
         { title: 'Js', percent: '80%' },
-        { title: 'PHP', percent: '75%' },
-        { title: 'WordPress', percent: '85%' },
+        { title: 'React', percent: '75%' },
       ],
-      skills: [
-        { skillName: 'Bootstrap, Materialize' },
-        { skillName: 'Stylus, Sass, Less' },
-        { skillName: 'Gulp, Webpack, Grunt' },
-        { skillName: 'GIT Knowledge' },
-      ],
+      skills: [{ skillName: 'Sass, Less' }, { skillName: 'GIT Knowledge' }],
     },
     services: {
       header: {
@@ -409,15 +406,15 @@ function App() {
           'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
       },
       cards: [
-        { src: img1, alt: 'project', href: '' },
-        { src: img2, alt: 'project', href: '' },
-        { src: img3, alt: 'project', href: '' },
-        { src: img4, alt: 'project', href: '' },
-        { src: img5, alt: 'project', href: '' },
-        { src: img6, alt: 'project', href: '' },
-        { src: img7, alt: 'project', href: '' },
-        { src: img8, alt: 'project', href: '' },
-        { src: img9, alt: 'project', href: '' },
+        { src: img1, alt: 'project' },
+        { src: img2, alt: 'project' },
+        { src: img3, alt: 'project' },
+        { src: img4, alt: 'project' },
+        { src: img5, alt: 'project' },
+        { src: img6, alt: 'project' },
+        { src: img7, alt: 'project' },
+        { src: img8, alt: 'project' },
+        { src: img9, alt: 'project' },
       ],
     },
     blog: {
@@ -457,14 +454,14 @@ function App() {
       infoHeader: { title: 'Leave Us Your Info' },
       contactsHeader: { title: 'Contact Information' },
       address: [
-        { title: 'Country:', value: 'Bangladesh' },
-        { title: 'City:', value: 'Dhaka' },
-        { title: 'Street:', value: '35 Vhatara, Badda' },
+        { title: 'Country:', value: 'Russia' },
+        { title: 'City:', value: 'Moscow' },
+        { title: 'Street:', value: 'Energeticheskaya, 10' },
       ],
       mail: [
-        { title: 'Email:', value: 'Youremail@Gmail.com' },
-        { title: 'Skype:', value: '@Yourusername' },
-        { title: 'Telegram:', value: '@Yourusername' },
+        { title: 'Email:', value: 'korgehah@Gmail.com' },
+        { title: 'Phone:', value: '+79779942072' },
+        { title: 'Telegram:', value: '@eixlu' },
       ],
     },
 
@@ -476,17 +473,20 @@ function App() {
       { src: contacts, alt: 'Contacts', href: '#contacts' },
     ],
   };
+  const [modal, setModal] = useState(false);
+
   return (
     <div className='layout'>
       <About {...Data.about} />
       <main className='layout__main'>
         <Banner />
         <Services {...Data.services} />
-        <Portfolio {...Data.portfolio} />
+        <Portfolio {...Data.portfolio} setModal={setModal} />
         <Blog {...Data.blog} />
         <Contacts {...Data.contacts} />
         <Location />
         <Copyright />
+        <Modal isOpened={modal} modalClose={() => setModal(false)} />
       </main>
       <Menu mockNavigation={Data.nav} />
     </div>

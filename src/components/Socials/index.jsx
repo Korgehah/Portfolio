@@ -2,7 +2,7 @@ import React from 'react';
 
 const SocialItem = ({ src, alt, href }) => {
   return (
-    <a href={href} className='socials__item'>
+    <a href={href} rel='noreferrer' className='socials__item' target='_blank'>
       <img className='socials__image' src={src} alt={alt} />
     </a>
   );

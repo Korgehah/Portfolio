@@ -108,9 +108,7 @@ body {
 
   &__button {
     margin-top: 25px;
-    width: 220px;
-    height: 40px;
-    padding: 0 40px;
+    padding: 8px 40px;
     box-sizing: border-box;
     justify-content: space-between;
   }
@@ -159,6 +157,11 @@ body {
     justify-content: space-between;
     box-sizing: border-box;
 
+    &-container {
+      text-decoration: none;
+      color: inherit;
+    }
+
     &-image {
       margin-right: -9px;
     }
@@ -190,6 +193,11 @@ body {
     width: 30px;
     height: 30px;
     margin-bottom: 55px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
   }
 }
 
@@ -198,10 +206,8 @@ body {
 
   &__button {
     font-size: 14px;
-    padding: 9px 23px;
+    padding: 6px 23px;
     box-sizing: border-box;
-    width: 159px;
-    height: 35px;
   }
 
   &__form {
@@ -219,7 +225,16 @@ body {
       align-items: center;
       font-size: $font-size-main;
       color: $color-6;
-      margin-bottom: 233px;
+      animation: form 0.4s ease-in-out;
+    }
+  }
+
+  @keyframes form {
+    0% {
+      margin-bottom: 286px;
+    }
+    100% {
+      margin-bottom: 0px;
     }
   }
 
@@ -247,6 +262,10 @@ body {
       justify-content: flex-end;
     }
   }
+}
+.map__container {
+  width: 970px;
+  height: 300px;
 }
 
 .copyright {

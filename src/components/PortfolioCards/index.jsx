@@ -1,19 +1,19 @@
 import React from 'react';
 
-const PortfolioCard = ({ src, alt, href }) => {
+const PortfolioCard = ({ src, alt, setModal }) => {
   return (
-    <a href={href} className='portfolio__card'>
-      <div className='portfolio__cover' />
+    <div className='portfolio__card'>
+      <div className='portfolio__cover' onClick={() => setModal(true)} />
       <img className='portfolio__card-image' src={src} alt={alt} />
-    </a>
+    </div>
   );
 };
 
-const PortfolioCards = ({ cards }) => {
+const PortfolioCards = ({ cards, setModal }) => {
   return (
     <div className='portfolio__cards'>
       {cards.map((card, index) => (
-        <PortfolioCard {...card} key={index} />
+        <PortfolioCard {...card} key={index} setModal={setModal} />
       ))}
     </div>
   );

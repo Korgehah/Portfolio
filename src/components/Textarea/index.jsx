@@ -1,4 +1,5 @@
 import React from 'react';
+import { Scrollbar } from 'react-scrollbars-custom';
 
 const Textarea = ({ title, name, register, required, errors, errorText }) => {
   return (
@@ -7,12 +8,14 @@ const Textarea = ({ title, name, register, required, errors, errorText }) => {
         {title}
         {required && <span className='contacts__required'>Required</span>}
       </label>
-      <textarea
-        {...register(name, {
-          required: required,
-        })}
-        className='contacts__input contacts__input_big'
-      ></textarea>
+      <Scrollbar style={{ width: '530px', height: '216px' }}>
+        <textarea
+          {...register(name, {
+            required: required,
+          })}
+          className='contacts__input contacts__input_big'
+        ></textarea>
+      </Scrollbar>
       {errors && errors[name] && (
         <div className='contacts__label contacts__label-error'>{errorText}</div>
       )}
