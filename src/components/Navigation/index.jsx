@@ -1,11 +1,20 @@
 import React from 'react';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const NavigationItem = ({ src, alt, href }) => {
   return (
-    <a href={href} className='navigation__item'>
+    <Link
+      className='navigation__item'
+      activeClass='active'
+      to={href}
+      spy={true}
+      smooth={true}
+      offset={0}
+      duration={500}
+    >
       <div className='navigation__prompt'>{alt}</div>
       <img className='navigation__image' src={src} alt={alt} />
-    </a>
+    </Link>
   );
 };
 

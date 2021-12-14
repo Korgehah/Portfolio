@@ -1,13 +1,34 @@
 .modal {
-  margin: auto;
-  padding: 40px;
-  background-color: $color-9;
-  max-width: 1200px;
-  box-sizing: border-box;
+  position: fixed;
+  background: rgb(43, 43, 43, 0.9);
+  top: 0;
+  left: 0;
+  z-index: 9;
+  animation: modalOpacity 0.2s ease-in-out;
+  overflow-y: scroll;
   display: flex;
-  flex-direction: column;
-  position: relative;
-  animation: modalMove 0.3s ease-in-out;
+  justify-content: center;
+  align-items: center;
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__content {
+    padding: 40px;
+    background-color: $color-9;
+    max-width: 1200px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    animation: modalMove 0.3s ease-in-out;
+  }
 
   &__header {
     display: flex;
@@ -25,26 +46,6 @@
 
     &:hover {
       color: $color-1;
-    }
-  }
-
-  &__wrapper {
-    position: fixed;
-    background: rgb(43, 43, 43, 0.9);
-    top: 0;
-    left: 0;
-    z-index: 1;
-    animation: modalOpacity 0.2s ease-in-out;
-    overflow-y: scroll;
-
-    &_open {
-      display: flex;
-      height: 100vh;
-      width: 100vw;
-    }
-
-    &_close {
-      display: none;
     }
   }
 
@@ -99,6 +100,16 @@
   }
 }
 
+.--open {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.--close {
+  display: none;
+}
+
 @keyframes modalOpacity {
   0% {
     opacity: 0;
@@ -110,7 +121,7 @@
 
 @keyframes modalMove {
   0% {
-    transform: translateY(-400px);
+    transform: translateY(-600px);
   }
   100% {
     transform: translateY(0px);

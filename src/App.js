@@ -160,11 +160,11 @@ const Services = ({ header, cards }) => {
   );
 };
 
-const Portfolio = ({ header, cards, setModal }) => {
+const Portfolio = ({ header, cards, setIsOpen }) => {
   return (
     <section id='portfolio' className='layout__section portfolio'>
       <HeadOfBlock {...header} />
-      <PortfolioCards cards={cards} setModal={setModal} />
+      <PortfolioCards cards={cards} setIsOpen={setIsOpen} />
     </section>
   );
 };
@@ -466,14 +466,14 @@ function App() {
     },
 
     nav: [
-      { src: home, alt: 'Home', href: '#home' },
-      { src: services, alt: 'Services', href: '#services' },
-      { src: portfolio, alt: 'Portfolio', href: '#portfolio' },
-      { src: blog, alt: 'Blog', href: '#blog' },
-      { src: contacts, alt: 'Contacts', href: '#contacts' },
+      { src: home, alt: 'Home', href: 'banner' },
+      { src: services, alt: 'Services', href: 'services' },
+      { src: portfolio, alt: 'Portfolio', href: 'portfolio' },
+      { src: blog, alt: 'Blog', href: 'blog' },
+      { src: contacts, alt: 'Contacts', href: 'contacts' },
     ],
   };
-  const [modal, setModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className='layout'>
@@ -481,12 +481,12 @@ function App() {
       <main className='layout__main'>
         <Banner />
         <Services {...Data.services} />
-        <Portfolio {...Data.portfolio} setModal={setModal} />
+        <Portfolio {...Data.portfolio} setIsOpen={setIsOpen} />
         <Blog {...Data.blog} />
         <Contacts {...Data.contacts} />
         <Location />
         <Copyright />
-        <Modal isOpened={modal} modalClose={() => setModal(false)} />
+        <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
       </main>
       <Menu mockNavigation={Data.nav} />
     </div>

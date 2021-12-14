@@ -2,17 +2,22 @@ import React from 'react';
 import Button from '../Button/index';
 import img from '../../assets/images/modal-image-1.jpg';
 
-const Modal = ({ isOpened, modalClose, header, description, stack, date }) => {
+const Modal = ({ isOpen, setIsOpen, header, description, stack, date }) => {
+  const handleClick = (event) => {
+    const $modal = document.querySelector('.modal__overlay');
+    console.log(event.currentTarget);
+    if (event.target === $modal) setIsOpen(false);
+  };
+
   return (
     <div
-      className={`modal__wrapper ${
-        isOpened ? 'modal__wrapper_open' : 'modal__wrapper_close'
-      }`}
+      className={`modal ${isOpen ? '--open' : '--close'}`}
+      onClick={handleClick}
     >
-      <div className='modal'>
+      <div className='modal__content'>
         <div className='modal__header'>
           <h1 className='modal__title'>Startup website for Patty</h1>
-          <span className='modal__close' onClick={modalClose}>
+          <span className='modal__close' onClick={() => setIsOpen(false)}>
             ×
           </span>
         </div>
@@ -40,6 +45,7 @@ const Modal = ({ isOpened, modalClose, header, description, stack, date }) => {
           </a>
         </div>
       </div>
+      <div className='modal__overlay' />
     </div>
   );
 };
