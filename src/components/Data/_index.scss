@@ -3,10 +3,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-  }
 
-  &:last-child {
-    margin-bottom: 0;
+    :last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__name {

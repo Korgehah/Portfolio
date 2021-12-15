@@ -109,7 +109,7 @@ const About = ({ socials, data, languages, scale, skills }) => {
 
 const Banner = () => {
   return (
-    <div id='home' className='banner'>
+    <div className='banner'>
       <div className='banner__wrapper'>
         <div className='banner__info'>
           <h1 className='banner__name'>
@@ -162,7 +162,7 @@ const Banner = () => {
 
 const Services = ({ header, cards }) => {
   return (
-    <section id='services' className='layout__section services'>
+    <section className='layout__section services'>
       <HeadOfBlock {...header} />
       <ServicesCards cards={cards} />
     </section>
@@ -171,7 +171,7 @@ const Services = ({ header, cards }) => {
 
 const Portfolio = ({ header, cards, setIsOpen }) => {
   return (
-    <section id='portfolio' className='layout__section portfolio'>
+    <section className='layout__section portfolio'>
       <HeadOfBlock {...header} />
       <PortfolioCards cards={cards} setIsOpen={setIsOpen} />
     </section>
@@ -180,7 +180,7 @@ const Portfolio = ({ header, cards, setIsOpen }) => {
 
 const Blog = ({ header, cards }) => {
   return (
-    <section id='blog' className='layout__section blog'>
+    <section className='layout__section blog'>
       <HeadOfBlock {...header} />
       <BlogCards cards={cards} />
     </section>
@@ -255,7 +255,7 @@ const Form = () => {
 
 const Contacts = ({ infoHeader, contactsHeader, address, mail }) => {
   return (
-    <section id='contacts' className='layout__section contacts'>
+    <section className='layout__section contacts'>
       <div className='contacts__form-container'>
         <HeadOfBlock {...infoHeader} />
         <Form />

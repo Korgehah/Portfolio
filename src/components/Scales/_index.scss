@@ -1,18 +1,18 @@
-.range {
+.scale {
   &__item {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     color: $color-6;
     margin-bottom: 9px;
-  }
 
-  &:last-child {
-    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__progress {
-    width: 220px;
+    width: 100%;
     outline: 1px solid $color-1;
     border-radius: 5px;
     height: 4px;

@@ -2,11 +2,11 @@ import React from 'react';
 
 const ScaleItem = ({ title, percent }) => {
   return (
-    <div className='range__item'>
-      <div className='range__title'>{title}</div>
-      <div className='range__percent'>{percent}</div>
-      <div className='range__progress'>
-        <div className='range__line' style={{ width: percent }} />
+    <div className='scale__item'>
+      <div className='scale__title'>{title}</div>
+      <div className='scale__percent'>{percent}</div>
+      <div className='scale__progress'>
+        <div className='scale__line' style={{ width: percent }} />
       </div>
     </div>
   );
@@ -14,9 +14,9 @@ const ScaleItem = ({ title, percent }) => {
 
 const Scales = ({ scaleData }) => {
   return (
-    <div className='range'>
-      {scaleData.map((range, index) => (
-        <ScaleItem {...range} key={index} />
+    <div className='scale'>
+      {scaleData.map((scale, index) => (
+        <ScaleItem {...scale} key={index} />
       ))}
     </div>
   );

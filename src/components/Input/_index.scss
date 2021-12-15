@@ -2,14 +2,12 @@
   background-color: $color-7;
   border: none;
   height: 50px;
-  font-size: $font-size-main;
   width: 521px;
   box-sizing: border-box;
   padding: 0 15px;
+  font: inherit;
 
   &-container {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 8px;
     min-height: 112px;
 
