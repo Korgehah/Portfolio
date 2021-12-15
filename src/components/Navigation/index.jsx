@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const NavigationItem = ({ src, alt, href }) => {
   return (
@@ -12,8 +12,10 @@ const NavigationItem = ({ src, alt, href }) => {
       offset={0}
       duration={500}
     >
+      <div className='navigation__image-container'>
+        <img className='navigation__image' src={src} alt={alt} />
+      </div>
       <div className='navigation__prompt'>{alt}</div>
-      <img className='navigation__image' src={src} alt={alt} />
     </Link>
   );
 };

@@ -50,6 +50,7 @@ import Input from './components/Input';
 import Textarea from './components/Textarea';
 /* Scrollbar */
 import { Scrollbar } from 'react-scrollbars-custom';
+import { Link } from 'react-scroll';
 
 const About = ({ socials, data, languages, scale, skills }) => {
   return (
@@ -124,7 +125,15 @@ const Banner = () => {
             volutpat feugiat placerat lobortis. Natoque rutrum semper sed
             suspendisse nunc lectus.
           </p>
-          <a href='#contacts' className='banner__button-container'>
+          <Link
+            className='banner__button-container'
+            activeClass='active'
+            to='contacts'
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
             <Button addClass='banner__button'>
               Hire me
               <svg
@@ -141,7 +150,7 @@ const Banner = () => {
                 />
               </svg>
             </Button>
-          </a>
+          </Link>
         </div>
         <div className='banner__photo-container'>
           <img className='banner__photo' src={photo} alt='my_photo' />
