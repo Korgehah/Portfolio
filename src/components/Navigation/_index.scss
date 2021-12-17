@@ -10,14 +10,22 @@
     margin-bottom: 43px;
     position: relative;
 
+    @media (max-width: 1260px) {
+      margin-bottom: 34px;
+    }
+
+    @media (max-width: 1052px) {
+      margin-bottom: 24px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
   }
 
   &__image {
-    width: 18px;
-    height: 18px;
+    width: 50%;
+    height: 50%;
     margin: auto;
     transition: filter 0.3s ease-in-out;
 
@@ -25,12 +33,22 @@
       display: flex;
       width: 40px;
       height: 40px;
-      background-color: $color-7;
+      background-color: $color-background;
       border-radius: 50%;
       transition: background-color 0.3s ease-in-out;
 
+      @media (max-width: 1530px) {
+        width: 30px;
+        height: 30px;
+      }
+
+      @media (max-width: 1260px) {
+        width: 25px;
+        height: 25px;
+      }
+
       &:hover {
-        background-color: $color-1;
+        background-color: $color-yellow;
 
         & ~ .navigation__prompt {
           opacity: 1;
@@ -48,11 +66,11 @@
     width: 65px;
     height: 24px;
     position: absolute;
-    background-color: $color-2;
+    background-color: $color-text-main;
     top: -38px;
     left: -13px;
     border-radius: 2px;
-    color: $color-9;
+    color: $color-content-background;
     text-align: center;
     font-size: 12px;
     line-height: 15px;
@@ -62,14 +80,50 @@
     transition: opacity 0.3s ease-in-out;
     user-select: none;
 
+    @media (max-width: 1530px) {
+      left: -17px;
+    }
+
+    @media (max-width: 1260px) {
+      font-size: 10px;
+      width: 56px;
+      height: 19px;
+      padding-top: 3px;
+      left: -16px;
+      top: -30px;
+    }
+
+    @media (max-width: 1052px) {
+      font-size: 7px;
+      width: 39px;
+      height: 14px;
+      padding-top: 0;
+      left: -7px;
+      top: -21px;
+    }
+
     &::after {
       content: '';
       position: absolute;
       border: 8px solid transparent;
-      border-top: 14px solid $color-2;
+      border-top: 14px solid $color-text-main;
       border-bottom: none;
       top: 19px;
       left: 24px;
+
+      @media (max-width: 1260px) {
+        border: 7px solid transparent;
+        border-top: 10px solid $color-text-main;
+        top: 18px;
+        left: 21px;
+      }
+
+      @media (max-width: 1052px) {
+        border: 4px solid transparent;
+        border-top: 6px solid $color-text-main;
+        top: 13px;
+        left: 15px;
+      }
     }
   }
 }

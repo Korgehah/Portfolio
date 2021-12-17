@@ -5,9 +5,19 @@
   &__item {
     width: 36px;
     height: 36px;
-    background-color: $color-1;
+    background-color: $color-yellow;
     border-radius: 50%;
     display: flex;
+
+    @media (max-width: 1530px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media (max-width: 1260px) {
+      width: 23px;
+      height: 23px;
+    }
 
     &:hover .socials__image {
       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
@@ -16,8 +26,8 @@
   }
 
   &__image {
-    width: 20px;
-    height: 20px;
+    width: 50%;
+    height: 50%;
     margin: auto;
     transition: filter 0.2s ease-in-out;
   }

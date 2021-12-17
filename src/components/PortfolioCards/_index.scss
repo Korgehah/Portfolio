@@ -6,12 +6,12 @@
     justify-content: space-between;
 
     &-item {
-      font-weight: $font-weight-medium;
+      font-weight: 500;
       cursor: pointer;
       transition: color 0.3s ease-in-out;
 
       &:hover {
-        color: $color-1;
+        color: $color-yellow;
       }
     }
   }
@@ -20,6 +20,14 @@
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(3, 32%);
+
+    @media (max-width: 1530px) {
+      gap: 14px;
+    }
+
+    @media (max-width: 1260px) {
+      gap: 12px;
+    }
   }
 
   &__card {
@@ -27,13 +35,13 @@
     position: relative;
 
     &-image {
-      width: 310px;
-      height: 300px;
+      width: 100%;
+      height: 100%;
     }
   }
 
   &__cover {
-    background-color: $color-1;
+    background-color: $color-yellow;
     z-index: 1;
     width: 100%;
     height: 100%;
@@ -55,6 +63,10 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+
+      @media (max-width: 1052px) {
+        transform: translate(-50%, -50%) scale(0.7);
+      }
     }
   }
 }

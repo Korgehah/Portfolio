@@ -21,7 +21,7 @@
 
   &__content {
     padding: 40px;
-    background-color: $color-9;
+    background-color: $color-content-background;
     max-width: 1200px;
     box-sizing: border-box;
     display: flex;
@@ -37,39 +37,39 @@
   }
 
   &__close {
-    color: $color-2;
-    font-size: $font-size-big;
+    color: $color-text-main;
+    font-size: 48px;
     cursor: pointer;
     width: 33px;
     height: 33px;
     transition: color 0.2s ease-in-out;
 
     &:hover {
-      color: $color-1;
+      color: $color-yellow;
     }
   }
 
   &__title {
-    color: $color-2;
+    color: $color-text-main;
     margin: 0 0 10px;
-    font-size: $font-size-header;
-    line-height: $line-height-header;
+    font-size: 32px;
+    line-height: 36px;
   }
 
   &__subtitle {
-    color: $color-6;
+    color: $color-text-secondary;
     margin: 0 0 20px;
     text-align: justify;
   }
 
   &__feature {
-    color: $color-6;
+    color: $color-text-secondary;
     margin: 0 0 10px;
 
     &_bold {
       margin: 0 15px 0 0;
       text-transform: uppercase;
-      font-weight: $font-weight-bold;
+      font-weight: bold;
     }
   }
 
@@ -86,12 +86,12 @@
     padding: 13px 0;
     width: 170px;
     justify-content: center;
-    font-size: $font-size-small;
+    font-size: 15px;
 
     &-link {
       margin-right: 20px;
       text-decoration: none;
-      color: $color-2;
+      color: $color-text-main;
     }
 
     &:last-child {

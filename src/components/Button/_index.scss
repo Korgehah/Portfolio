@@ -1,5 +1,5 @@
 .button {
-  background-color: $color-1;
+  background-color: $color-yellow;
   text-transform: uppercase;
   border: none;
   border-radius: 0;
@@ -9,7 +9,15 @@
   transition: color 0.3s ease-in-out;
   cursor: pointer;
 
+  @media (max-width: 1530px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 1260px) {
+    font-size: 10px;
+  }
+
   &:hover {
-    color: $color-9;
+    color: $color-content-background;
   }
 }

@@ -55,7 +55,7 @@ import { Link } from 'react-scroll';
 const About = ({ socials, data, languages, scale, skills }) => {
   return (
     <div className='about'>
-      <Scrollbar style={{ width: '315px', height: '100vh' }}>
+      <Scrollbar style={{ width: '315px', height: '100vh', maxHeight: '100%' }}>
         <div className='about__wrapper'>
           <div className='about__info'>
             <div className='about__avatar-container'>
@@ -272,31 +272,26 @@ const Location = () => {
   return (
     <div className='layout__section map'>
       <YMaps>
-        <div className='map__container'>
-          <Map
-            instanceRef={(ref) => {
-              ref && ref.behaviors.disable('scrollZoom');
-            }}
-            defaultState={{
-              center: [55.75975980555492, 37.705900405895406],
-              zoom: 16,
-            }}
-            style={{
-              width: '970px',
-              height: '300px',
-            }}
-          >
-            <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
-            <ZoomControl />
-          </Map>
-        </div>
+        <Map
+          className='map__content'
+          instanceRef={(ref) => {
+            ref && ref.behaviors.disable('scrollZoom');
+          }}
+          defaultState={{
+            center: [55.75975980555492, 37.705900405895406],
+            zoom: 16,
+          }}
+        >
+          <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
+          <ZoomControl />
+        </Map>
       </YMaps>
     </div>
   );
 };
 
 const Copyright = () => {
-  return <div className='copyright'>2021 All Rights Reserved.Ojjomedia</div>;
+  return <div className='copyright'>2021 All Rights Reserved. Korgehah</div>;
 };
 
 const Menu = ({ mockNavigation }) => {
@@ -439,7 +434,6 @@ function App() {
           title: 'How To Make Web Templates',
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-          href: '',
         },
         {
           src: img2,
@@ -447,7 +441,6 @@ function App() {
           title: 'Make Business Card',
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-          href: '',
         },
         {
           src: img3,
@@ -455,7 +448,6 @@ function App() {
           title: 'How To Make Flyer Design',
           description:
             'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-          href: '',
         },
       ],
     },
@@ -468,7 +460,7 @@ function App() {
         { title: 'Street:', value: 'Energeticheskaya, 10' },
       ],
       mail: [
-        { title: 'Email:', value: 'korgehah@Gmail.com' },
+        { title: 'Email:', value: 'korgehah@gmail.com' },
         { title: 'Phone:', value: '+79779942072' },
         { title: 'Telegram:', value: '@eixlu' },
       ],
@@ -486,18 +478,22 @@ function App() {
 
   return (
     <div className='layout'>
-      <About {...Data.about} />
-      <main className='layout__main'>
-        <Banner />
-        <Services {...Data.services} />
-        <Portfolio {...Data.portfolio} setIsOpen={setIsOpen} />
-        <Blog {...Data.blog} />
-        <Contacts {...Data.contacts} />
-        <Location />
-        <Copyright />
-        <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
-      </main>
-      <Menu mockNavigation={Data.nav} />
+      <div className='layout__wrapper'>
+        <About {...Data.about} />
+        <main className='layout__main'>
+          <div className='layout__main-wrapper'>
+            <Banner />
+            <Services {...Data.services} />
+            <Portfolio {...Data.portfolio} setIsOpen={setIsOpen} />
+            <Blog {...Data.blog} />
+            <Contacts {...Data.contacts} />
+            <Location />
+            <Copyright />
+            <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+          </div>
+        </main>
+        <Menu mockNavigation={Data.nav} />
+      </div>
     </div>
   );
 }

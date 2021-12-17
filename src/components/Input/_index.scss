@@ -1,18 +1,39 @@
 .contacts__input {
-  background-color: $color-7;
+  background-color: $color-background;
   border: none;
   height: 50px;
-  width: 521px;
+  width: 100%;
   box-sizing: border-box;
   padding: 0 15px;
   font: inherit;
+
+  @media (max-width: 1530px) {
+    height: 40px;
+  }
+
+  @media (max-width: 1260px) {
+    height: 30px;
+  }
 
   &-container {
     margin-bottom: 8px;
     min-height: 112px;
 
+    @media (max-width: 1530px) {
+      min-height: 94px;
+    }
+
+    @media (max-width: 1260px) {
+      margin-bottom: 6px;
+      min-height: 78px;
+    }
+
     &:last-of-type {
       min-height: 278px;
+
+      @media (max-width: 1260px) {
+        min-height: 179px;
+      }
     }
   }
 
@@ -24,5 +45,9 @@
     height: 210px;
     padding: 15px;
     resize: none;
+
+    @media (max-width: 1260px) {
+      height: 126px;
+    }
   }
 }

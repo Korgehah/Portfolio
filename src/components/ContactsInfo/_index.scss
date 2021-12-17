@@ -1,4 +1,12 @@
 .contacts {
+  &__info {
+    width: 39%;
+
+    @media (max-width: 1052px) {
+      width: 100%;
+    }
+  }
+
   & .head {
     align-items: flex-start;
 
@@ -7,25 +15,46 @@
     }
   }
 
+  &__cards {
+    @media (max-width: 1052px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__card {
     margin: 0 0 18px;
     padding: 25px;
-    background-color: $color-9;
-    width: 370px;
+    background-color: $color-content-background;
+    width: 100%;
     box-sizing: border-box;
+
+    @media (max-width: 1260px) {
+      padding: 15px;
+    }
+
+    @media (max-width: 1052px) {
+      margin: 0 18px 0 0;
+    }
 
     &-container {
       display: flex;
       width: 40px;
       height: 40px;
       margin: 0 auto 30px;
-      background-color: $color-1;
+      background-color: $color-yellow;
       border-radius: 50%;
+
+      @media (max-width: 1260px) {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 20px;
+      }
     }
 
     &-image {
-      width: 18px;
-      height: 18px;
+      width: 50%;
+      height: 50%;
       margin: auto;
     }
 
@@ -38,19 +67,26 @@
     display: flex;
     justify-content: space-between;
     margin: 0 0 16px;
-    color: $color-6;
+    color: $color-text-secondary;
+
+    @media (max-width: 1260px) {
+      margin: 0 0 10px;
+    }
 
     &:last-child {
       margin: 0;
     }
 
     &-title {
-      font-size: $font-size-main;
-      font-weight: $font-weight-medium;
+      font-weight: 500;
     }
 
     &-value {
-      font-size: $font-size-small;
+      font-size: 15px;
+
+      @media (max-width: 1530px) {
+        font-size: 13px;
+      }
     }
   }
 }
