@@ -1,4 +1,78 @@
 .navigation {
+  height: 100vh;
+  max-height: 1194px;
+  position: sticky;
+  top: 0;
+
+  @media (max-width: 1530px) {
+    max-height: 1088px;
+  }
+
+  @media (max-width: 1260px) {
+    max-height: 881px;
+  }
+
+  @media (max-width: 1052px) {
+    max-height: 856px;
+  }
+
+  @media (max-width: 828px) {
+    max-height: 788px;
+  }
+
+  &__wrapper {
+    padding: 50px 34px;
+    background-color: $color-content-background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+
+    @media (max-width: 1530px) {
+      padding: 50px 22px;
+    }
+
+    @media (max-width: 1260px) {
+      padding: 50px 24px;
+    }
+
+    @media (max-width: 1052px) {
+      padding: 40px 15px;
+    }
+
+    @media (max-width: 828px) {
+      padding: 40px 10px;
+    }
+  }
+
+  &__theme {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 55px;
+    transition: transform 0.3s ease-in-out;
+
+    @media (max-width: 1530px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 1260px) {
+      width: 20px;
+      height: 20px;
+    }
+
+    @media (max-width: 828px) {
+      margin-bottom: 25px;
+      width: 13px;
+      height: 13px;
+    }
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
   &__container {
     margin-top: auto;
     margin-bottom: auto;
@@ -16,6 +90,10 @@
 
     @media (max-width: 1052px) {
       margin-bottom: 24px;
+    }
+
+    @media (max-width: 828px) {
+      margin-bottom: 19px;
     }
 
     &:last-child {
@@ -45,6 +123,11 @@
       @media (max-width: 1260px) {
         width: 25px;
         height: 25px;
+      }
+
+      @media (max-width: 828px) {
+        width: 16px;
+        height: 16px;
       }
 
       &:hover {
@@ -102,6 +185,14 @@
       top: -21px;
     }
 
+    @media (max-width: 828px) {
+      font-size: 5px;
+      width: 24px;
+      height: 13px;
+      left: -4px;
+      top: -17px;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -123,6 +214,13 @@
         border-top: 6px solid $color-text-main;
         top: 13px;
         left: 15px;
+      }
+
+      @media (max-width: 1052px) {
+        order: 5px solid transparent;
+        border-top: 5px solid $color-text-main;
+        top: 11px;
+        left: 8px;
       }
     }
   }

@@ -28,6 +28,11 @@
     @media (max-width: 1260px) {
       gap: 12px;
     }
+
+    @media (max-width: 828px) {
+      grid-template-columns: repeat(2, 48%);
+      gap: 11px;
+    }
   }
 
   &__card {

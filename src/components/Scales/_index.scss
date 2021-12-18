@@ -6,6 +6,10 @@
     color: $color-text-secondary;
     margin-bottom: 9px;
 
+    @media (max-width: 828px) {
+      margin-bottom: 5px;
+    }
+
     &:last-child {
       margin-bottom: 0;
     }
@@ -17,6 +21,10 @@
     border-radius: 5px;
     height: 4px;
     position: relative;
+
+    @media (max-width: 828px) {
+      height: 2px;
+    }
   }
 
   &__line {
@@ -26,5 +34,9 @@
     max-height: 200px;
     position: absolute;
     top: 0px;
+
+    @media (max-width: 828px) {
+      height: 2px;
+    }
   }
 }

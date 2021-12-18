@@ -15,6 +15,11 @@
     height: 30px;
   }
 
+  @media (max-width: 828px) {
+    height: 25px;
+    padding: 0 10px;
+  }
+
   &-container {
     margin-bottom: 8px;
     min-height: 112px;
@@ -28,11 +33,20 @@
       min-height: 78px;
     }
 
+    @media (max-width: 828px) {
+      min-height: 63px;
+      margin-bottom: 4px;
+    }
+
     &:last-of-type {
       min-height: 278px;
 
       @media (max-width: 1260px) {
         min-height: 179px;
+      }
+
+      @media (max-width: 828px) {
+        min-height: 129px;
       }
     }
   }
@@ -48,6 +62,11 @@
 
     @media (max-width: 1260px) {
       height: 126px;
+    }
+
+    @media (max-width: 828px) {
+      padding: 10px;
+      height: 87px;
     }
   }
 }

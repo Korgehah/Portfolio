@@ -19,6 +19,11 @@
       height: 23px;
     }
 
+    @media (max-width: 828px) {
+      width: 15px;
+      height: 15px;
+    }
+
     &:hover .socials__image {
       filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
         hue-rotate(93deg) brightness(103%) contrast(103%);

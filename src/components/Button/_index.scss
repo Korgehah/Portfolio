@@ -17,6 +17,10 @@
     font-size: 10px;
   }
 
+  @media (max-width: 828px) {
+    font-size: 7px;
+  }
+
   &:hover {
     color: $color-content-background;
   }

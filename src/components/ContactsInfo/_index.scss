@@ -37,6 +37,10 @@
       margin: 0 18px 0 0;
     }
 
+    @media (max-width: 828px) {
+      padding: 10px;
+    }
+
     &-container {
       display: flex;
       width: 40px;
@@ -49,6 +53,12 @@
         width: 30px;
         height: 30px;
         margin-bottom: 20px;
+      }
+
+      @media (max-width: 828px) {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
       }
     }
 
@@ -86,6 +96,10 @@
 
       @media (max-width: 1530px) {
         font-size: 13px;
+      }
+
+      @media (max-width: 828px) {
+        font-size: 8px;
       }
     }
   }

@@ -5,6 +5,14 @@
   align-items: center;
   text-align: center;
 
+  @media (max-width: 1260px) {
+    margin: 0 0 25px;
+  }
+
+  @media (max-width: 828px) {
+    margin: 0 0 20px;
+  }
+
   &__title {
     color: $color-text-main;
     font-size: 32px;
@@ -17,6 +25,11 @@
     @media (max-width: 1260px) {
       font-size: 20px;
       margin: 0 0 13px;
+    }
+
+    @media (max-width: 828px) {
+      font-size: 14px;
+      margin: 0 0 10px;
     }
   }
 
@@ -33,9 +46,9 @@
     @media (max-width: 1260px) {
       font-size: 11px;
     }
-  }
 
-  @media (max-width: 1260px) {
-    margin: 0 0 25px;
+    @media (max-width: 828px) {
+      font-size: 8px;
+    }
   }
 }

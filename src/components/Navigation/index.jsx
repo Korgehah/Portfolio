@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import theme from '../../assets/images/theme.svg';
 
 const NavigationItem = ({ src, alt, href }) => {
   return (
@@ -22,11 +23,14 @@ const NavigationItem = ({ src, alt, href }) => {
 
 const Navigation = ({ nav }) => {
   return (
-    <nav className='navigation__container'>
-      {nav.map((navigation, index) => (
-        <NavigationItem {...navigation} key={index} />
-      ))}
-    </nav>
+    <div className='navigation__wrapper'>
+      <img className='navigation__theme' src={theme} alt='theme' />
+      <nav className='navigation__container'>
+        {nav.map((navigation, index) => (
+          <NavigationItem {...navigation} key={index} />
+        ))}
+      </nav>
+    </div>
   );
 };
 export default Navigation;

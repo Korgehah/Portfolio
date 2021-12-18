@@ -4,6 +4,11 @@
     justify-content: space-between;
     margin-bottom: 10px;
 
+    @media (max-width: 828px) {
+      margin: 0 0 5px;
+      line-height: 10px;
+    }
+
     :last-child {
       margin-bottom: 0;
     }

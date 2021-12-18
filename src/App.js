@@ -11,7 +11,6 @@ import Scales from './components/Scales/index';
 import Skills from './components/Skills/index';
 import HeadOfBlock from './components/HeadOfBlock';
 import ServicesCards from './components/ServicesCards';
-import theme from './assets/images/theme.svg';
 import Navigation from './components/Navigation';
 import PortfolioCards from './components/PortfolioCards';
 import BlogCards from './components/BlogCards';
@@ -297,10 +296,7 @@ const Copyright = () => {
 const Menu = ({ mockNavigation }) => {
   return (
     <div className='navigation'>
-      <div className='navigation__wrapper'>
-        <img className='navigation__theme' src={theme} alt='theme' />
-        <Navigation nav={mockNavigation} />
-      </div>
+      <Navigation nav={mockNavigation} />
     </div>
   );
 };
