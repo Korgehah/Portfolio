@@ -3,8 +3,6 @@
   max-height: 1194px;
   position: sticky;
   top: 0;
-  z-index: 1;
-  border-bottom: 1px solid $color-text-main;
 
   @media (max-width: 1530px) {
     max-height: 1088px;
@@ -19,13 +17,15 @@
   }
 
   @media (max-width: 828px) {
-    max-height: 788px;
+    max-height: 545px;
   }
 
   @media (max-width: 636px) {
     max-height: unset;
     height: unset;
     margin: 0 0 18px;
+    z-index: 1;
+    border-bottom: 1px solid $color-text-main;
   }
 
   &__wrapper {
@@ -67,6 +67,7 @@
     height: 30px;
     margin-bottom: 55px;
     transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 
     @media (max-width: 1530px) {
       width: 24px;
@@ -109,6 +110,7 @@
   &__item {
     margin-bottom: 43px;
     position: relative;
+    cursor: pointer;
 
     @media (max-width: 1260px) {
       margin-bottom: 34px;
