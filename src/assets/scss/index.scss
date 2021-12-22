@@ -43,7 +43,7 @@ body {
     }
 
     @media (max-width: 1260px) {
-      width: $desktop-width-small;
+      width: $desktop-small-width;
     }
 
     @media (max-width: 1052px) {
@@ -51,7 +51,15 @@ body {
     }
 
     @media (max-width: 828px) {
-      width: $tablet-width-small;
+      width: $tablet-small-width;
+    }
+
+    @media (max-width: 636px) {
+      width: $mobile-width;
+    }
+
+    @media (max-width: 435px) {
+      width: $mobile-small-width;
     }
   }
 
@@ -73,8 +81,17 @@ body {
     }
 
     @media (max-width: 828px) {
-      width: 379px;
+      width: 374px;
       margin: 0 10px 0 10px;
+    }
+
+    @media (max-width: 636px) {
+      width: $mobile-width;
+      margin: 0 10px;
+    }
+
+    @media (max-width: 435px) {
+      width: 280px;
     }
   }
 
@@ -623,13 +640,4 @@ body {
 
 .ScrollbarsCustom-Thumb {
   background: rgba(0, 0, 0, 0.2) !important;
-}
-
-@media (max-width: 636px) {
-}
-
-@media (max-width: 435px) {
-}
-
-@media (max-width: 374px) {
 }

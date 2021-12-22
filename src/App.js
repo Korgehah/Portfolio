@@ -50,6 +50,7 @@ import Textarea from './components/Textarea';
 /* Scrollbar */
 import { Scrollbar } from 'react-scrollbars-custom';
 import { Link } from 'react-scroll';
+import { useWindowWidth } from './hooks/useWindowWidth';
 
 const About = ({ socials, data, languages, scale, skills }) => {
   return (
@@ -293,16 +294,8 @@ const Copyright = () => {
   return <div className='copyright'>2021 All Rights Reserved. Korgehah</div>;
 };
 
-const Menu = ({ mockNavigation }) => {
-  return (
-    <div className='navigation'>
-      <Navigation nav={mockNavigation} />
-    </div>
-  );
-};
-
 function App() {
-  const Data = {
+  const data = {
     about: {
       socials: [
         { src: vkontakte, alt: 'vkontakte', href: 'https://vk.com/whontowqis' },
@@ -472,23 +465,29 @@ function App() {
   };
   const [isOpen, setIsOpen] = useState(false);
 
+  const windowWidth = useWindowWidth();
+  console.log(windowWidth);
+
   return (
     <div className='layout'>
       <div className='layout__wrapper'>
-        <About {...Data.about} />
+        {windowWidth && windowWidth > 636 && <About {...data.about} />}
         <main className='layout__main'>
           <div className='layout__main-wrapper'>
+            {windowWidth && windowWidth <= 636 && (
+              <Navigation navItems={data.nav} />
+            )}
             <Banner />
-            <Services {...Data.services} />
-            <Portfolio {...Data.portfolio} setIsOpen={setIsOpen} />
-            <Blog {...Data.blog} />
-            <Contacts {...Data.contacts} />
+            <Services {...data.services} />
+            <Portfolio {...data.portfolio} setIsOpen={setIsOpen} />
+            <Blog {...data.blog} />
+            <Contacts {...data.contacts} />
             <Location />
             <Copyright />
             <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </main>
-        <Menu mockNavigation={Data.nav} />
+        {windowWidth && windowWidth > 636 && <Navigation navItems={data.nav} />}
       </div>
     </div>
   );

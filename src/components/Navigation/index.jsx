@@ -21,15 +21,17 @@ const NavigationItem = ({ src, alt, href }) => {
   );
 };
 
-const Navigation = ({ nav }) => {
+const Navigation = ({ navItems }) => {
   return (
-    <div className='navigation__wrapper'>
-      <img className='navigation__theme' src={theme} alt='theme' />
-      <nav className='navigation__container'>
-        {nav.map((navigation, index) => (
-          <NavigationItem {...navigation} key={index} />
-        ))}
-      </nav>
+    <div className='navigation'>
+      <div className='navigation__wrapper'>
+        <img className='navigation__theme' src={theme} alt='theme' />
+        <nav className='navigation__container'>
+          {navItems.map((navigation, index) => (
+            <NavigationItem {...navigation} key={index} />
+          ))}
+        </nav>
+      </div>
     </div>
   );
 };
