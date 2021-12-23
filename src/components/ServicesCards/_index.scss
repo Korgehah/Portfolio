@@ -32,12 +32,13 @@
     align-items: center;
     justify-content: center;
     background-color: $color-content-background;
-    padding: 28px 0 42px;
+    transition: background-color 0.3s ease-in-out;
+    padding: 28px 30px 42px;
     text-align: center;
     position: relative;
 
     @media (max-width: 1260px) {
-      padding: 20px 0 30px;
+      padding: 20px 20px 30px;
     }
 
     @media (max-width: 828px) {
@@ -80,6 +81,7 @@
       font-size: 15px;
       color: $color-text-secondary;
       margin: 0;
+      transition: color 0.3s ease-in-out;
 
       @media (max-width: 1530px) {
         font-size: 12px;
@@ -95,7 +97,6 @@
     }
 
     &-description {
-      max-width: 80%;
       margin-bottom: 12px;
 
       @media (max-width: 828px) {

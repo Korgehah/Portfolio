@@ -21,11 +21,16 @@ const NavigationItem = ({ src, alt, href }) => {
   );
 };
 
-const Navigation = ({ navItems }) => {
+const Navigation = ({ navItems, dark, setDark }) => {
   return (
     <div className='navigation'>
       <div className='navigation__wrapper'>
-        <img className='navigation__theme' src={theme} alt='theme' />
+        <img
+          className='navigation__theme'
+          src={theme}
+          alt='theme'
+          onClick={() => setDark(!dark)}
+        />
         <nav className='navigation__container'>
           {navItems.map((navigation, index) => (
             <NavigationItem {...navigation} key={index} />

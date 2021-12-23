@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     color: $color-text-secondary;
     margin-bottom: 9px;
+    transition: color 0.3s ease-in-out;
 
     @media (max-width: 828px) {
       margin-bottom: 5px;

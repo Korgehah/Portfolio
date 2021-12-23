@@ -37,7 +37,6 @@
   }
 
   &__close {
-    color: $color-text-main;
     font-size: 48px;
     cursor: pointer;
     width: 33px;
@@ -50,7 +49,6 @@
   }
 
   &__title {
-    color: $color-text-main;
     margin: 0 0 10px;
     font-size: 32px;
     line-height: 36px;
@@ -91,7 +89,7 @@
     &-link {
       margin-right: 20px;
       text-decoration: none;
-      color: $color-text-main;
+      color: inherit;
     }
 
     &:last-child {

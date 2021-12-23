@@ -31,6 +31,7 @@
   &__wrapper {
     padding: 50px 34px;
     background-color: $color-content-background;
+    transition: background-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;

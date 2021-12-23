@@ -14,7 +14,6 @@
   }
 
   &__title {
-    color: $color-text-main;
     font-size: 32px;
     margin: 0 0 25px;
 
@@ -38,6 +37,7 @@
     color: $color-text-secondary;
     max-width: 438px;
     margin: 0;
+    transition: color 0.3s ease-in-out;
 
     @media (max-width: 1530px) {
       font-size: 13px;

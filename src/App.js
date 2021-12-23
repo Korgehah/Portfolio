@@ -464,18 +464,19 @@ function App() {
     ],
   };
   const [isOpen, setIsOpen] = useState(false);
+  const [dark, setDark] = useState(true);
 
   const windowWidth = useWindowWidth();
   console.log(windowWidth);
 
   return (
-    <div className='layout'>
+    <div className={`layout ${dark ? '--dark' : ''}`}>
       <div className='layout__wrapper'>
         {windowWidth && windowWidth > 636 && <About {...data.about} />}
         <main className='layout__main'>
           <div className='layout__main-wrapper'>
             {windowWidth && windowWidth <= 636 && (
-              <Navigation navItems={data.nav} />
+              <Navigation navItems={data.nav} dark={dark} setDark={setDark} />
             )}
             <Banner />
             <Services {...data.services} />
@@ -487,7 +488,9 @@ function App() {
             <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
         </main>
-        {windowWidth && windowWidth > 636 && <Navigation navItems={data.nav} />}
+        {windowWidth && windowWidth > 636 && (
+          <Navigation navItems={data.nav} dark={dark} setDark={setDark} />
+        )}
       </div>
     </div>
   );

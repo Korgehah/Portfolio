@@ -50,7 +50,8 @@
     }
 
     &:hover .blog__source {
-      filter: invert(100%) saturate(30%);
+      filter: invert(47%) sepia(53%) saturate(2107%) hue-rotate(91deg)
+        brightness(121%) contrast(127%);
     }
 
     &-content {
@@ -58,6 +59,7 @@
       flex-direction: column;
       padding: 17px 25px;
       background-color: $color-content-background;
+      transition: background-color 0.3s ease-in-out;
       box-sizing: border-box;
       height: calc(100% - 300px);
 
@@ -110,6 +112,8 @@
       margin: 0 0 9px;
       font-size: 15px;
       max-width: 260px;
+      color: $color-text-secondary;
+      transition: color 0.3s ease-in-out;
 
       @media (max-width: 1530px) {
         font-size: 13px;
