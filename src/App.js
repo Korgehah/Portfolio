@@ -206,6 +206,7 @@ const Form = () => {
   if (formIsSubmit) {
     return (
       <div className='contacts__form contacts__form_submited'>
+        {/* TODO: Не забудь поменять на анлийский */}
         Спасибо! Я свяжусь с вами в ближайшее время.
       </div>
     );
@@ -226,7 +227,6 @@ const Form = () => {
         errorText='Enter your name'
         validationType='name'
       />
-
       <Input
         title='Your Email'
         name='email'
@@ -237,7 +237,6 @@ const Form = () => {
         validationType='email'
       />
       <Input title='Subject' name='subject' register={register} />
-
       <Textarea
         name='message'
         title='Your Message'
@@ -294,180 +293,180 @@ const Copyright = () => {
   return <div className='copyright'>2021 All Rights Reserved. Korgehah</div>;
 };
 
-function App() {
-  const data = {
-    about: {
-      socials: [
-        { src: vkontakte, alt: 'vkontakte', href: 'https://vk.com/whontowqis' },
-        {
-          src: instagram,
-          alt: 'instagram',
-          href: 'https://www.instagram.com/whontowqis/',
-        },
-        { src: linkedin, alt: 'linkedin', href: 'https://www.linkedin.com/' },
-        { src: telegram, alt: 'telegram', href: 'https://t.me/eixlu' },
-        {
-          src: github,
-          alt: 'github',
-          href: 'https://github.com/Korgehah?tab=repositories',
-        },
-      ],
-
-      data: [
-        { title: 'Age:', value: '22' },
-        { title: 'Residence:', value: 'Russia' },
-        {
-          title: 'Freelance:',
-          value: 'Available',
-          colorTheme: 'data__value_colored',
-        },
-        { title: 'Address:', value: 'Moscow, Russia' },
-      ],
-      languages: [
-        { title: 'Russian', percent: '100%' },
-        { title: 'English', percent: '70%' },
-      ],
-      scale: [
-        { title: 'Html', percent: '90%' },
-        { title: 'CSS', percent: '85%' },
-        { title: 'Js', percent: '80%' },
-        { title: 'React', percent: '75%' },
-      ],
-      skills: [{ skillName: 'Sass, Less' }, { skillName: 'GIT Knowledge' }],
-    },
-    services: {
-      header: {
-        title: 'My Services',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+const data = {
+  about: {
+    socials: [
+      { src: vkontakte, alt: 'vkontakte', href: 'https://vk.com/whontowqis' },
+      {
+        src: instagram,
+        alt: 'instagram',
+        href: 'https://www.instagram.com/whontowqis/',
       },
-      cards: [
-        {
-          src: webDev,
-          alt: 'Web Development',
-          title: 'Web Development',
-          subtitle: 'Blog, E-Commerce',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-        },
-        {
-          src: uiDesign,
-          alt: 'UI/UX Design',
-          title: 'UI/UX Design',
-          subtitle: 'Mobile app, Website design',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-        },
-        {
-          src: soundDesign,
-          alt: 'Sound Design',
-          title: 'Sound Design',
-          subtitle: 'Voice over, Beat Making',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-        },
-        {
-          src: gameDev,
-          alt: 'Game Development',
-          title: 'Game Design',
-          subtitle: 'Character Design, Props & Objects',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-        },
-        {
-          src: photography,
-          alt: 'Photography',
-          title: 'Photography',
-          subtitle: 'Portrait, Product photography',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-        },
-        {
-          src: advertisment,
-          alt: 'Advertisment',
-          title: 'Advertising',
-          subtitle: 'Lorem ipsum dolor sit',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
-        },
-      ],
-    },
-    portfolio: {
-      header: {
-        title: 'Portfolio',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+      { src: linkedin, alt: 'linkedin', href: 'https://www.linkedin.com/' },
+      { src: telegram, alt: 'telegram', href: 'https://t.me/eixlu' },
+      {
+        src: github,
+        alt: 'github',
+        href: 'https://github.com/Korgehah?tab=repositories',
       },
-      cards: [
-        { src: img1, alt: 'project' },
-        { src: img2, alt: 'project' },
-        { src: img3, alt: 'project' },
-        { src: img4, alt: 'project' },
-        { src: img5, alt: 'project' },
-        { src: img6, alt: 'project' },
-        { src: img7, alt: 'project' },
-        { src: img8, alt: 'project' },
-        { src: img9, alt: 'project' },
-      ],
-    },
-    blog: {
-      header: {
-        title: 'Blog',
-        description:
-          'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
-      },
-      cards: [
-        {
-          src: img1,
-          alt: 'blog',
-          title: 'How To Make Web Templates',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-        },
-        {
-          src: img2,
-          alt: 'blog',
-          title: 'Make Business Card',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-        },
-        {
-          src: img3,
-          alt: 'blog',
-          title: 'How To Make Flyer Design',
-          description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
-        },
-      ],
-    },
-    contacts: {
-      infoHeader: { title: 'Leave Us Your Info' },
-      contactsHeader: { title: 'Contact Information' },
-      address: [
-        { title: 'Country:', value: 'Russia' },
-        { title: 'City:', value: 'Moscow' },
-        { title: 'Street:', value: 'Energeticheskaya, 10' },
-      ],
-      mail: [
-        { title: 'Email:', value: 'korgehah@gmail.com' },
-        { title: 'Phone:', value: '+79779942072' },
-        { title: 'Telegram:', value: '@eixlu' },
-      ],
-    },
-
-    nav: [
-      { src: home, alt: 'Home', href: 'banner' },
-      { src: services, alt: 'Services', href: 'services' },
-      { src: portfolio, alt: 'Portfolio', href: 'portfolio' },
-      { src: blog, alt: 'Blog', href: 'blog' },
-      { src: contacts, alt: 'Contacts', href: 'contacts' },
     ],
-  };
+    // TODO: Я бы переименовал во что-то другое, чтобы было нативнее. Тоже самое относится и к компоненту.
+    data: [
+      { title: 'Age:', value: '22' },
+      { title: 'Residence:', value: 'Russia' },
+      {
+        title: 'Freelance:',
+        value: 'Available',
+        colorTheme: 'data__value_colored',
+      },
+      { title: 'Address:', value: 'Moscow, Russia' },
+    ],
+    languages: [
+      { title: 'Russian', percent: '100%' },
+      { title: 'English', percent: '70%' },
+    ],
+    scale: [
+      { title: 'Html', percent: '90%' },
+      { title: 'CSS', percent: '85%' },
+      { title: 'Js', percent: '80%' },
+      { title: 'React', percent: '75%' },
+    ],
+    // TODO: Тут лучше через массив строк делать
+    skills: [{ skillName: 'Sass, Less' }, { skillName: 'GIT Knowledge' }],
+  },
+  services: {
+    header: {
+      title: 'My Services',
+      description:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    },
+    cards: [
+      {
+        src: webDev,
+        alt: 'Web Development',
+        title: 'Web Development',
+        subtitle: 'Blog, E-Commerce',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+      },
+      {
+        src: uiDesign,
+        alt: 'UI/UX Design',
+        title: 'UI/UX Design',
+        subtitle: 'Mobile app, Website design',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+      },
+      {
+        src: soundDesign,
+        alt: 'Sound Design',
+        title: 'Sound Design',
+        subtitle: 'Voice over, Beat Making',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+      },
+      {
+        src: gameDev,
+        alt: 'Game Development',
+        title: 'Game Design',
+        subtitle: 'Character Design, Props & Objects',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+      },
+      {
+        src: photography,
+        alt: 'Photography',
+        title: 'Photography',
+        subtitle: 'Portrait, Product photography',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+      },
+      {
+        src: advertisment,
+        alt: 'Advertisment',
+        title: 'Advertising',
+        subtitle: 'Lorem ipsum dolor sit',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+      },
+    ],
+  },
+  portfolio: {
+    header: {
+      title: 'Portfolio',
+      description:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    },
+    cards: [
+      { src: img1, alt: 'project' },
+      { src: img2, alt: 'project' },
+      { src: img3, alt: 'project' },
+      { src: img4, alt: 'project' },
+      { src: img5, alt: 'project' },
+      { src: img6, alt: 'project' },
+      { src: img7, alt: 'project' },
+      { src: img8, alt: 'project' },
+      { src: img9, alt: 'project' },
+    ],
+  },
+  blog: {
+    header: {
+      title: 'Blog',
+      description:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+    },
+    cards: [
+      {
+        src: img1,
+        alt: 'blog',
+        title: 'How To Make Web Templates',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+      },
+      {
+        src: img2,
+        alt: 'blog',
+        title: 'Make Business Card',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+      },
+      {
+        src: img3,
+        alt: 'blog',
+        title: 'How To Make Flyer Design',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+      },
+    ],
+  },
+  contacts: {
+    infoHeader: { title: 'Leave Us Your Info' },
+    contactsHeader: { title: 'Contact Information' },
+    address: [
+      { title: 'Country:', value: 'Russia' },
+      { title: 'City:', value: 'Moscow' },
+      { title: 'Street:', value: 'Energeticheskaya, 10' },
+    ],
+    mail: [
+      { title: 'Email:', value: 'korgehah@gmail.com' },
+      { title: 'Phone:', value: '+79779942072' },
+      { title: 'Telegram:', value: '@eixlu' },
+    ],
+  },
+  nav: [
+    { src: home, alt: 'Home', href: 'banner' },
+    { src: services, alt: 'Services', href: 'services' },
+    { src: portfolio, alt: 'Portfolio', href: 'portfolio' },
+    { src: blog, alt: 'Blog', href: 'blog' },
+    { src: contacts, alt: 'Contacts', href: 'contacts' },
+  ],
+};
+
+// TODO: Перепиши по нормальному на стрелочную функцию
+function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [dark, setDark] = useState(true);
-
   const windowWidth = useWindowWidth();
-  console.log(windowWidth);
 
   return (
     <div className={`layout ${dark ? '--dark' : ''}`}>
@@ -476,7 +475,12 @@ function App() {
         <main className='layout__main'>
           <div className='layout__main-wrapper'>
             {windowWidth && windowWidth <= 636 && (
-              <Navigation navItems={data.nav} dark={dark} setDark={setDark} />
+              <Navigation
+                className='navigation_mob'
+                navItems={data.nav}
+                dark={dark}
+                setDark={setDark}
+              />
             )}
             <Banner />
             <Services {...data.services} />
@@ -489,7 +493,12 @@ function App() {
           </div>
         </main>
         {windowWidth && windowWidth > 636 && (
-          <Navigation navItems={data.nav} dark={dark} setDark={setDark} />
+          <Navigation
+            className='navigation_desktop'
+            navItems={data.nav}
+            dark={dark}
+            setDark={setDark}
+          />
         )}
       </div>
     </div>

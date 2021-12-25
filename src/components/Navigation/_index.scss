@@ -28,6 +28,22 @@
     border-bottom: 1px solid $color-text-main;
   }
 
+  &_mob {
+    display: none;
+
+    @media (max-width: 636px) {
+      display: block;
+    }
+  }
+
+  &_desktop {
+    display: block;
+
+    @media (max-width: 636px) {
+      display: none;
+    }
+  }
+
   &__wrapper {
     padding: 50px 34px;
     background-color: $color-content-background;

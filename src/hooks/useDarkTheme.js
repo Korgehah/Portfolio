@@ -1,3 +1,4 @@
+// TODO: Удали неиспользуемый код. Тут явно не то, что нужно для darkTheme
 import { useEffect, useState } from 'react';
 
 const useDarkTheme = () => {

@@ -189,6 +189,10 @@ body {
     max-height: 545px;
   }
 
+  @media (max-width: 636px) {
+    display: none;
+  }
+
   &__wrapper {
     padding: 48px 42px 27px;
     background-color: $color-content-background;

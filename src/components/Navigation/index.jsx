@@ -21,9 +21,11 @@ const NavigationItem = ({ src, alt, href }) => {
   );
 };
 
-const Navigation = ({ navItems, dark, setDark }) => {
+const Navigation = ({ className, navItems, dark, setDark }) => {
+  const currentStyle = className ? className : '';
+
   return (
-    <div className='navigation'>
+    <div className={`navigation ${currentStyle}`}>
       <div className='navigation__wrapper'>
         <img
           className='navigation__theme'
