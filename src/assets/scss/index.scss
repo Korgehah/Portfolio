@@ -88,24 +88,6 @@ body {
       filter: brightness(100) saturate(100%);
       transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
     }
-
-    //   & .navigation__theme {
-    //     color: $color-content-background-dark;
-    //     background-color: $color-text-main-dark;
-    //   }
-
-    //   & .button:hover {
-    //     color: $color-content-background-dark;
-    //   }
-
-    //   & .contacts__label-error {
-    //     color: $color-error;
-    //   }
-
-    //   & .modal__button-link {
-    //     transition: color 0.3s ease-in-out;
-    //     color: $color-text-main-dark;
-    //   }
   }
 
   &__wrapper {
@@ -161,7 +143,7 @@ body {
     }
 
     @media (max-width: 636px) {
-      width: $mobile-width;
+      width: 355px;
       margin: 0 10px;
     }
 
