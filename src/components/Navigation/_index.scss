@@ -1,31 +1,30 @@
 .navigation {
   height: 100vh;
-  max-height: 1194px;
+  max-height: 1302px;
   position: sticky;
   top: 0;
 
   @media (max-width: 1530px) {
-    max-height: 1088px;
+    max-height: 1183px;
   }
 
   @media (max-width: 1260px) {
-    max-height: 881px;
+    max-height: 964px;
   }
 
   @media (max-width: 1052px) {
-    max-height: 856px;
+    max-height: 939px;
   }
 
   @media (max-width: 828px) {
-    max-height: 545px;
+    max-height: 750px;
   }
 
   @media (max-width: 636px) {
     max-height: unset;
     height: unset;
-    margin: 0 0 18px;
-    z-index: 1;
-    border-bottom: 1px solid $color-text-main;
+    z-index: 2;
+    border-bottom: 1px solid $color-text-secondary;
   }
 
   &_mob {
@@ -72,10 +71,8 @@
 
     @media (max-width: 636px) {
       flex-direction: row;
-      height: unset;
-      max-width: unset;
       justify-content: space-between;
-      padding: 13px 13px;
+      padding: 19px;
     }
   }
 
@@ -98,13 +95,26 @@
 
     @media (max-width: 828px) {
       margin-bottom: 25px;
-      width: 13px;
-      height: 13px;
+      width: 16px;
+      height: 16px;
     }
 
     @media (max-width: 636px) {
-      margin: 0;
+      margin: 0 50px 0 0;
+      width: 25px;
+      height: 25px;
     }
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__info {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 
     &:hover {
       transform: rotate(180deg);
@@ -116,12 +126,6 @@
     margin-bottom: auto;
     display: flex;
     flex-direction: column;
-
-    @media (max-width: 636px) {
-      flex-direction: row;
-      width: 70%;
-      justify-content: space-between;
-    }
   }
 
   &__item {
@@ -142,7 +146,7 @@
     }
 
     @media (max-width: 636px) {
-      margin-bottom: 0;
+      margin-bottom: 30px;
     }
 
     &:last-child {
@@ -175,8 +179,13 @@
       }
 
       @media (max-width: 828px) {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
+      }
+
+      @media (max-width: 636px) {
+        width: 30px;
+        height: 30px;
       }
 
       &:hover {
@@ -226,16 +235,16 @@
     }
 
     @media (max-width: 1052px) {
-      font-size: 7px;
+      font-size: 10px;
       width: 39px;
-      height: 14px;
-      padding-top: 0;
+      height: 16px;
+      padding-top: 1px;
       left: -7px;
       top: -21px;
     }
 
     @media (max-width: 828px) {
-      font-size: 5px;
+      font-size: 9px;
       width: 24px;
       height: 13px;
       left: -4px;
@@ -261,16 +270,41 @@
       @media (max-width: 1052px) {
         border: 4px solid transparent;
         border-top: 6px solid $color-text-main;
-        top: 13px;
+        top: 14px;
         left: 15px;
       }
 
-      @media (max-width: 1052px) {
-        order: 5px solid transparent;
+      @media (max-width: 828px) {
         border-top: 5px solid $color-text-main;
-        top: 11px;
-        left: 8px;
+        top: 14px;
+        left: 15px;
       }
+    }
+  }
+
+  &__burger {
+    margin-left: auto;
+  }
+
+  &__dropdown {
+    margin: 64px 0 0 0;
+    padding: 20px 10px;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+    line-height: 25px;
+    position: absolute;
+    background-color: $color-content-background;
+    top: 0;
+    box-sizing: border-box;
+    left: 0;
+    transition: background-color 0.3s ease-in-out;
+
+    &.--open {
+      display: flex;
     }
   }
 }

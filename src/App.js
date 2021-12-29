@@ -5,7 +5,7 @@ import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 /* scss */
 import './assets/scss/index.scss';
 /* components */
-import Data from './components/Data';
+import PersonalInfo from './components/PersonalInfo';
 import Socials from './components/Socials/index';
 import Scales from './components/Scales/index';
 import Skills from './components/Skills/index';
@@ -52,10 +52,76 @@ import { Scrollbar } from 'react-scrollbars-custom';
 import { Link } from 'react-scroll';
 import { useWindowWidth } from './hooks/useWindowWidth';
 
-const About = ({ socials, data, languages, scale, skills }) => {
+const About = ({
+  socials,
+  isAboutOpen,
+  personalInfo,
+  languages,
+  scale,
+  skills,
+  className,
+  windowWidth,
+}) => {
+  const currentStyle = className ? className : '';
   return (
-    <div className='about'>
-      <Scrollbar style={{ width: '315px', height: '100vh', maxHeight: '100%' }}>
+    <div
+      className={`about ${currentStyle} ${
+        currentStyle === 'about_mob' && isAboutOpen ? '--open' : ''
+      }`}
+    >
+      {windowWidth && windowWidth > 636 && (
+        <Scrollbar
+          style={{ width: '315px', height: '100vh', maxHeight: '100%' }}
+        >
+          <div className='about__wrapper'>
+            <div className='about__info'>
+              <div className='about__avatar-container'>
+                <img src={avatar} className='about__avatar' alt='avatar' />
+              </div>
+              <p className='about__name'>Evgeny Nikolaev</p>
+              <p className='about__speciality'>Front-End Developer</p>
+              <Socials socials={socials} />
+            </div>
+
+            <div className='about__info'>
+              <PersonalInfo personalInfo={personalInfo} />
+            </div>
+
+            <div className='about__info'>
+              <h2 className='about__title'>Languages</h2>
+              <Scales scaleData={languages} />
+            </div>
+
+            <div className='about__info'>
+              <h2 className='about__title'>Skills</h2>
+              <Scales scaleData={scale} />
+            </div>
+
+            <div className='about__info'>
+              <h2 className='about__title'>Extra skills</h2>
+              <Skills skills={skills} />
+            </div>
+
+            <Button addClass='about__button'>
+              Download CV
+              <svg
+                className='about__button-icon'
+                width='14'
+                height='17'
+                viewBox='0 0 14 17'
+                fill='currentColor'
+                xmlns='http://www.w3.org/2000/svg'
+              >
+                <path
+                  d='M2.33317 12.9523H11.6665V8.28564H12.8332V13.619C12.8332 13.7958 12.7717 13.9654 12.6623 14.0904C12.5529 14.2154 12.4045 14.2856 12.2498 14.2856H1.74984C1.59513 14.2856 1.44675 14.2154 1.33736 14.0904C1.22796 13.9654 1.1665 13.7958 1.1665 13.619V8.28564H2.33317V12.9523ZM8.1665 6.28564H11.0832L6.99984 10.9523L2.9165 6.28564H5.83317V2.28564H8.1665V6.28564Z'
+                  fill='currentColor'
+                />
+              </svg>
+            </Button>
+          </div>
+        </Scrollbar>
+      )}
+      {windowWidth && windowWidth <= 636 && (
         <div className='about__wrapper'>
           <div className='about__info'>
             <div className='about__avatar-container'>
@@ -67,7 +133,7 @@ const About = ({ socials, data, languages, scale, skills }) => {
           </div>
 
           <div className='about__info'>
-            <Data dataset={data} />
+            <PersonalInfo personalInfo={personalInfo} />
           </div>
 
           <div className='about__info'>
@@ -102,7 +168,7 @@ const About = ({ socials, data, languages, scale, skills }) => {
             </svg>
           </Button>
         </div>
-      </Scrollbar>
+      )}
     </div>
   );
 };
@@ -169,11 +235,11 @@ const Services = ({ header, cards }) => {
   );
 };
 
-const Portfolio = ({ header, cards, setIsOpen }) => {
+const Portfolio = ({ header, cards, setIsModalOpen }) => {
   return (
     <section className='layout__section portfolio'>
       <HeadOfBlock {...header} />
-      <PortfolioCards cards={cards} setIsOpen={setIsOpen} />
+      <PortfolioCards cards={cards} setIsModalOpen={setIsModalOpen} />
     </section>
   );
 };
@@ -206,8 +272,7 @@ const Form = () => {
   if (formIsSubmit) {
     return (
       <div className='contacts__form contacts__form_submited'>
-        {/* TODO: Не забудь поменять на анлийский */}
-        Спасибо! Я свяжусь с вами в ближайшее время.
+        Thanks! I'll contact you soon.
       </div>
     );
   }
@@ -310,8 +375,8 @@ const data = {
         href: 'https://github.com/Korgehah?tab=repositories',
       },
     ],
-    // TODO: Я бы переименовал во что-то другое, чтобы было нативнее. Тоже самое относится и к компоненту.
-    data: [
+
+    personalInfo: [
       { title: 'Age:', value: '22' },
       { title: 'Residence:', value: 'Russia' },
       {
@@ -331,8 +396,14 @@ const data = {
       { title: 'Js', percent: '80%' },
       { title: 'React', percent: '75%' },
     ],
-    // TODO: Тут лучше через массив строк делать
-    skills: [{ skillName: 'Sass, Less' }, { skillName: 'GIT Knowledge' }],
+
+    skills: [
+      'Sass, Less',
+      'GIT Knowledge',
+      'BEM',
+      'Cross browser, adaptive layout',
+      'Figma, Photoshop',
+    ],
   },
   services: {
     header: {
@@ -462,47 +533,76 @@ const data = {
   ],
 };
 
-// TODO: Перепиши по нормальному на стрелочную функцию
-function App() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [dark, setDark] = useState(true);
+const App = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [dark, setDark] = useState(false);
   const windowWidth = useWindowWidth();
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
+  console.log(windowWidth);
   return (
     <div className={`layout ${dark ? '--dark' : ''}`}>
       <div className='layout__wrapper'>
-        {windowWidth && windowWidth > 636 && <About {...data.about} />}
+        {windowWidth && windowWidth > 636 && (
+          <About
+            className='about_desktop'
+            {...data.about}
+            windowWidth={windowWidth}
+          />
+        )}
+        {windowWidth && windowWidth <= 636 && (
+          <header className='header'>
+            <Navigation
+              className='navigation_mob'
+              navItems={data.nav}
+              dark={dark}
+              setDark={setDark}
+              isAboutOpen={isAboutOpen}
+              setIsAboutOpen={setIsAboutOpen}
+              windowWidth={windowWidth}
+              isDropdownOpen={isDropdownOpen}
+              setIsDropdownOpen={setIsDropdownOpen}
+            />
+          </header>
+        )}
         <main className='layout__main'>
           <div className='layout__main-wrapper'>
             {windowWidth && windowWidth <= 636 && (
-              <Navigation
-                className='navigation_mob'
-                navItems={data.nav}
-                dark={dark}
-                setDark={setDark}
+              <About
+                className='about_mob'
+                {...data.about}
+                isAboutOpen={isAboutOpen}
+                windowWidth={windowWidth}
               />
             )}
             <Banner />
             <Services {...data.services} />
-            <Portfolio {...data.portfolio} setIsOpen={setIsOpen} />
+            <Portfolio {...data.portfolio} setIsModalOpen={setIsModalOpen} />
             <Blog {...data.blog} />
             <Contacts {...data.contacts} />
             <Location />
-            <Copyright />
-            <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+            {windowWidth && windowWidth > 636 && <Copyright />}
+            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
           </div>
         </main>
+        {windowWidth && windowWidth <= 636 && (
+          <footer className='footer'>
+            <Copyright />
+          </footer>
+        )}
         {windowWidth && windowWidth > 636 && (
           <Navigation
             className='navigation_desktop'
             navItems={data.nav}
             dark={dark}
             setDark={setDark}
+            windowWidth={windowWidth}
           />
         )}
       </div>
     </div>
   );
-}
+};
 
 export default App;

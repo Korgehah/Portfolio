@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DataItem = ({ title, value, colorTheme }) => {
+const PersonalInfoItem = ({ title, value, colorTheme }) => {
   const additionalStyle = colorTheme ? colorTheme : '';
   return (
     <div className='data__item'>
@@ -10,13 +10,13 @@ const DataItem = ({ title, value, colorTheme }) => {
   );
 };
 
-const Data = ({ dataset }) => {
+const PersonalInfo = ({ personalInfo }) => {
   return (
     <div className='data'>
-      {dataset.map((data, index) => (
-        <DataItem {...data} key={index} />
+      {personalInfo.map((data, index) => (
+        <PersonalInfoItem {...data} key={index} />
       ))}
     </div>
   );
 };
-export default Data;
+export default PersonalInfo;

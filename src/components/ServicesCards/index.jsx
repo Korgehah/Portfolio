@@ -9,9 +9,6 @@ const ServicesCard = ({ src, alt, title, subtitle, description }) => {
       <div className='services__card services__card_hidden'>
         <h2 className='services__card-title'>{title}</h2>
         <p className='services__card-description'>{description}</p>
-        <a href={src} className='services__card-order'>
-          Order now
-        </a>
       </div>
     </div>
   );

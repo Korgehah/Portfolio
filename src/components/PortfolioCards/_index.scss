@@ -29,16 +29,21 @@
     }
 
     @media (max-width: 1052px) {
-      gap: 10px;
+      gap: 9px;
     }
 
     @media (max-width: 828px) {
       grid-template-columns: repeat(2, 48%);
-      gap: 15px;
+      gap: 13px;
     }
 
-    @media (max-width: 435px) {
-      gap: 11px;
+    @media (max-width: 636px) {
+      row-gap: 15px;
+      column-gap: 4%;
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(1, 100%);
     }
   }
 

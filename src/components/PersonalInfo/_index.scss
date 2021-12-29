@@ -5,8 +5,12 @@
     margin-bottom: 10px;
 
     @media (max-width: 828px) {
-      margin: 0 0 5px;
-      line-height: 10px;
+      margin: 0 0 8px;
+      line-height: 15px;
+    }
+
+    @media (max-width: 636px) {
+      line-height: 17px;
     }
 
     :last-child {
@@ -18,6 +22,14 @@
     color: $color-text-main;
     padding: 0 6px 0 5px;
     background-color: $color-yellow;
+
+    @media (max-width: 828px) {
+      padding: 0 3px;
+    }
+
+    @media (max-width: 636px) {
+      padding: 5px;
+    }
   }
 
   &__value_colored {

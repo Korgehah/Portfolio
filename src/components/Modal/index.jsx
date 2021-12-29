@@ -2,13 +2,20 @@ import React from 'react';
 import Button from '../Button/index';
 import img from '../../assets/images/modal-image-1.jpg';
 
-const Modal = ({ isOpen, setIsOpen, header, description, stack, date }) => {
+const Modal = ({
+  isModalOpen,
+  setIsModalOpen,
+  header,
+  description,
+  stack,
+  date,
+}) => {
   return (
-    <div className={`modal ${isOpen ? '--open' : '--close'}`}>
+    <div className={`modal ${isModalOpen ? '--open' : ''}`}>
       <div className='modal__content'>
         <div className='modal__header'>
           <h1 className='modal__title'>Startup website for Patty</h1>
-          <span className='modal__close' onClick={() => setIsOpen(false)}>
+          <span className='modal__close' onClick={() => setIsModalOpen(false)}>
             ×
           </span>
         </div>
@@ -36,7 +43,7 @@ const Modal = ({ isOpen, setIsOpen, header, description, stack, date }) => {
           </a>
         </div>
       </div>
-      <div className='modal__overlay' onClick={() => setIsOpen(false)} />
+      <div className='modal__overlay' onClick={() => setIsModalOpen(false)} />
     </div>
   );
 };
