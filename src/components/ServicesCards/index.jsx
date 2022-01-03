@@ -1,11 +1,10 @@
 import React from 'react';
 
-const ServicesCard = ({ src, alt, title, subtitle, description }) => {
+const ServicesCard = ({ src, alt, title, description }) => {
   return (
     <div className='services__card'>
       <img className='services__card-image' src={src} alt={alt} />
       <h2 className='services__card-title'>{title}</h2>
-      <p className='services__card-subtitle'>{subtitle}</p>
       <div className='services__card services__card_hidden'>
         <h2 className='services__card-title'>{title}</h2>
         <p className='services__card-description'>{description}</p>

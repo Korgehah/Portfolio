@@ -62,7 +62,6 @@ const Navigation = ({
     setIsDropdownOpen(false);
     setIsAboutOpen(!isAboutOpen);
   };
-  console.log(windowWidth);
   return (
     <div className={`navigation ${currentStyle}`}>
       <div className='navigation__wrapper'>

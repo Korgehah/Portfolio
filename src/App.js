@@ -25,12 +25,12 @@ import instagram from './assets/images/instagram.svg';
 import linkedin from './assets/images/linkedin.svg';
 import github from './assets/images/github.svg';
 import telegram from './assets/images/telegram.svg';
-import webDev from './assets/images/web_development.svg';
-import advertisment from './assets/images/advertisment.svg';
-import gameDev from './assets/images/game_development.svg';
-import uiDesign from './assets/images/ui_ux_design.svg';
-import photography from './assets/images/photography.svg';
-import soundDesign from './assets/images/sound_design.svg';
+import business from './assets/images/business.svg';
+import event from './assets/images/event.svg';
+import news from './assets/images/news.svg';
+import store from './assets/images/store.svg';
+import blog from './assets/images/blog.svg';
+import landing from './assets/images/landing.svg';
 import img1 from './assets/images/img1.png';
 import img2 from './assets/images/img2.png';
 import img3 from './assets/images/img3.png';
@@ -43,8 +43,8 @@ import img9 from './assets/images/img9.png';
 import home from './assets/images/Home.svg';
 import contacts from './assets/images/Contact.svg';
 import services from './assets/images/Services.svg';
-import blog from './assets/images/Blog.svg';
 import portfolio from './assets/images/Portfolio.svg';
+import blogNav from './assets/images/blog_nav.svg';
 import Input from './components/Input';
 import Textarea from './components/Textarea';
 /* Scrollbar */
@@ -347,7 +347,7 @@ const Location = () => {
           }}
         >
           <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
-          <ZoomControl />
+          <ZoomControl defaultState />
         </Map>
       </YMaps>
     </div>
@@ -413,52 +413,46 @@ const data = {
     },
     cards: [
       {
-        src: webDev,
-        alt: 'Web Development',
-        title: 'Web Development',
-        subtitle: 'Blog, E-Commerce',
+        src: business,
+        alt: 'Business card website',
+        title: 'Business card website',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+          'Business cards are a great way to make a lasting first impression and establish your credentials and credibility. ',
       },
       {
-        src: uiDesign,
-        alt: 'UI/UX Design',
-        title: 'UI/UX Design',
-        subtitle: 'Mobile app, Website design',
+        src: store,
+        alt: 'Online store',
+        title: 'Online store',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+          'Sell anywhere online. Let customers buy directly from your website or from their favorite places to shop online. ',
       },
       {
-        src: soundDesign,
-        alt: 'Sound Design',
-        title: 'Sound Design',
-        subtitle: 'Voice over, Beat Making',
+        src: landing,
+        alt: 'Landing',
+        title: 'Landing page',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+          'Landing page can bring more leads by gathering information that can help you better understand and market to visitors. ',
       },
       {
-        src: gameDev,
-        alt: 'Game Development',
-        title: 'Game Design',
-        subtitle: 'Character Design, Props & Objects',
+        src: news,
+        alt: 'News website',
+        title: 'News website',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+          'News websites are sites devoted to delivering the news in a different format than television, print or radio. ',
       },
       {
-        src: photography,
-        alt: 'Photography',
-        title: 'Photography',
-        subtitle: 'Portrait, Product photography',
+        src: blog,
+        alt: 'Blog',
+        title: 'Blog',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+          'Blogs are normally updated habitually, and more seasoned posts can be seen through archives. ',
       },
       {
-        src: advertisment,
-        alt: 'Advertisment',
-        title: 'Advertising',
-        subtitle: 'Lorem ipsum dolor sit',
+        src: event,
+        alt: 'Event website',
+        title: 'Event website',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna viverra morbi. ',
+          'An event website is practically a cost-free digital advertisement for the event you are organizing. ',
       },
     ],
   },
@@ -528,7 +522,7 @@ const data = {
     { src: home, alt: 'Home', href: 'banner' },
     { src: services, alt: 'Services', href: 'services' },
     { src: portfolio, alt: 'Portfolio', href: 'portfolio' },
-    { src: blog, alt: 'Blog', href: 'blog' },
+    { src: blogNav, alt: 'Blog', href: 'blog' },
     { src: contacts, alt: 'Contacts', href: 'contacts' },
   ],
 };
@@ -540,7 +534,6 @@ const App = () => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  console.log(windowWidth);
   return (
     <div className={`layout ${dark ? '--dark' : ''}`}>
       <div className='layout__wrapper'>
