@@ -18,4 +18,4 @@ const PortfolioCards = ({ cards, setIsModalOpen }) => {
     </div>
   );
 };
-export default PortfolioCards;
+export { PortfolioCards };

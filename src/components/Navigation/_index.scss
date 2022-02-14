@@ -3,6 +3,8 @@
   max-height: 1302px;
   position: sticky;
   top: 0;
+  background-color: $color-content-background;
+  transition: background-color 0.3s ease-in-out;
 
   @media (max-width: 1530px) {
     max-height: 1183px;
@@ -45,8 +47,6 @@
 
   &__wrapper {
     padding: 50px 34px;
-    background-color: $color-content-background;
-    transition: background-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -222,6 +222,7 @@
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     user-select: none;
+    pointer-events: none;
 
     @media (max-width: 1530px) {
       left: -17px;
@@ -309,5 +310,31 @@
     &.--open {
       display: flex;
     }
+  }
+
+  & .ScrollbarsCustom {
+    @media (max-width: 1530px) {
+      width: 74px !important;
+    }
+
+    @media (max-width: 1260px) {
+      width: 73px !important;
+    }
+
+    @media (max-width: 1052px) {
+      width: 55px !important;
+    }
+
+    @media (max-width: 828px) {
+      width: 40px !important;
+    }
+  }
+
+  & .ScrollbarsCustom-Track {
+    display: none !important;
+  }
+
+  & .ScrollbarsCustom-Wrapper {
+    inset: 0 !important;
   }
 }

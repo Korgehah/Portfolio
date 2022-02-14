@@ -24,4 +24,4 @@ const BlogCards = ({ cards }) => {
     </div>
   );
 };
-export default BlogCards;
+export { BlogCards };

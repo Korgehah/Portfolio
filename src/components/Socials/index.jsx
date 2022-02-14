@@ -17,4 +17,4 @@ const Socials = ({ socials }) => {
     </div>
   );
 };
-export default Socials;
+export { Socials };

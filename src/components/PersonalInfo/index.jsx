@@ -19,4 +19,4 @@ const PersonalInfo = ({ personalInfo }) => {
     </div>
   );
 };
-export default PersonalInfo;
+export { PersonalInfo };

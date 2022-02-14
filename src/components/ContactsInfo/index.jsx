@@ -32,4 +32,4 @@ const ContactsInfo = ({ address, mail }) => {
     </div>
   );
 };
-export default ContactsInfo;
+export { ContactsInfo };

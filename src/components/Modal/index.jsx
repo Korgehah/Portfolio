@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../Button/index';
+import { Button } from '../Button/index';
 import img from '../../assets/images/modal-image-1.jpg';
 
 const Modal = ({
@@ -47,4 +47,4 @@ const Modal = ({
     </div>
   );
 };
-export default Modal;
+export { Modal };

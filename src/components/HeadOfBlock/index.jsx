@@ -8,4 +8,4 @@ const HeadOfBlock = ({ title, description }) => {
     </div>
   );
 };
-export default HeadOfBlock;
+export { HeadOfBlock };

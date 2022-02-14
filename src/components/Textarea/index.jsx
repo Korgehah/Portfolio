@@ -19,4 +19,4 @@ const Textarea = ({ title, name, register, required, errors, errorText }) => {
     </div>
   );
 };
-export default Textarea;
+export { Textarea };

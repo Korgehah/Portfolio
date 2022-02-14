@@ -22,4 +22,4 @@ const ServicesCards = ({ cards }) => {
     </div>
   );
 };
-export default ServicesCards;
+export { ServicesCards };

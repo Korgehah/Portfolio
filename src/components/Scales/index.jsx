@@ -21,4 +21,4 @@ const Scales = ({ scaleData }) => {
     </div>
   );
 };
-export default Scales;
+export { Scales };

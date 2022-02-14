@@ -45,4 +45,4 @@ const Input = ({
     </div>
   );
 };
-export default Input;
+export { Input };

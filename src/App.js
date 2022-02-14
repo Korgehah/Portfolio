@@ -5,18 +5,20 @@ import { YMaps, Map, Placemark, ZoomControl } from 'react-yandex-maps';
 /* scss */
 import './assets/scss/index.scss';
 /* components */
-import PersonalInfo from './components/PersonalInfo';
-import Socials from './components/Socials/index';
-import Scales from './components/Scales/index';
-import Skills from './components/Skills/index';
-import HeadOfBlock from './components/HeadOfBlock';
-import ServicesCards from './components/ServicesCards';
-import Navigation from './components/Navigation';
-import PortfolioCards from './components/PortfolioCards';
-import BlogCards from './components/BlogCards';
-import ContactsInfo from './components/ContactsInfo';
-import Button from './components/Button';
-import Modal from './components/Modal';
+import { PersonalInfo } from './components/PersonalInfo';
+import { Socials } from './components/Socials/index';
+import { Scales } from './components/Scales/index';
+import { Skills } from './components/Skills/index';
+import { HeadOfBlock } from './components/HeadOfBlock';
+import { ServicesCards } from './components/ServicesCards';
+import { Navigation } from './components/Navigation';
+import { PortfolioCards } from './components/PortfolioCards';
+import { BlogCards } from './components/BlogCards';
+import { ContactsInfo } from './components/ContactsInfo';
+import { Button } from './components/Button';
+import { Modal } from './components/Modal';
+import { Input } from './components/Input';
+import { Textarea } from './components/Textarea';
 /* images */
 import avatar from './assets/images/avatar.png';
 import photo from './assets/images/photo.png';
@@ -45,11 +47,10 @@ import contacts from './assets/images/Contact.svg';
 import services from './assets/images/Services.svg';
 import portfolio from './assets/images/Portfolio.svg';
 import blogNav from './assets/images/blog_nav.svg';
-import Input from './components/Input';
-import Textarea from './components/Textarea';
 /* Scrollbar */
 import { Scrollbar } from 'react-scrollbars-custom';
 import { Link } from 'react-scroll';
+/* hooks */
 import { useWindowWidth } from './hooks/useWindowWidth';
 
 const About = ({
@@ -402,7 +403,7 @@ const data = {
       'GIT Knowledge',
       'BEM',
       'Cross browser, adaptive layout',
-      'Figma, Photoshop',
+      'Figma',
     ],
   },
   services: {
