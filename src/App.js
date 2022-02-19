@@ -33,15 +33,14 @@ import news from './assets/images/news.svg';
 import store from './assets/images/store.svg';
 import blog from './assets/images/blog.svg';
 import landing from './assets/images/landing.svg';
+import project1 from './assets/images/project1.png';
+import project2 from './assets/images/project2.png';
+import project3 from './assets/images/project3.png';
+// import project4 from './assets/images/project4.png';
+import project5 from './assets/images/project5.png';
 import img1 from './assets/images/img1.png';
 import img2 from './assets/images/img2.png';
 import img3 from './assets/images/img3.png';
-import img4 from './assets/images/img4.png';
-import img5 from './assets/images/img5.png';
-import img6 from './assets/images/img6.png';
-import img7 from './assets/images/img7.png';
-import img8 from './assets/images/img8.png';
-import img9 from './assets/images/img9.png';
 import home from './assets/images/Home.svg';
 import contacts from './assets/images/Contact.svg';
 import services from './assets/images/Services.svg';
@@ -180,7 +179,7 @@ const Banner = () => {
       <div className='banner__wrapper'>
         <div className='banner__info'>
           <h1 className='banner__name'>
-            I'm Evgeny Nikolaev
+            I'm Nikolaev Evgeny
             <br />
             <span className='banner__text banner__text_colored'>
               Front-end
@@ -236,11 +235,15 @@ const Services = ({ header, cards }) => {
   );
 };
 
-const Portfolio = ({ header, cards, setIsModalOpen }) => {
+const Portfolio = ({ header, cards, setIsModalOpen, setModalInfo }) => {
   return (
     <section className='layout__section portfolio'>
       <HeadOfBlock {...header} />
-      <PortfolioCards cards={cards} setIsModalOpen={setIsModalOpen} />
+      <PortfolioCards
+        cards={cards}
+        setIsModalOpen={setIsModalOpen}
+        setModalInfo={setModalInfo}
+      />
     </section>
   );
 };
@@ -461,18 +464,14 @@ const data = {
     header: {
       title: 'Portfolio',
       description:
-        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+        'This is my pet-projects, that I made while learning frontend development. You can learn more about each by clicking on them.',
     },
     cards: [
-      { src: img1, alt: 'project' },
-      { src: img2, alt: 'project' },
-      { src: img3, alt: 'project' },
-      { src: img4, alt: 'project' },
-      { src: img5, alt: 'project' },
-      { src: img6, alt: 'project' },
-      { src: img7, alt: 'project' },
-      { src: img8, alt: 'project' },
-      { src: img9, alt: 'project' },
+      { src: project1, alt: 'project' },
+      { src: project2, alt: 'project' },
+      { src: project3, alt: 'project' },
+      // { src: project4, alt: 'project' },
+      { src: project5, alt: 'project' },
     ],
   },
   blog: {
@@ -530,6 +529,7 @@ const data = {
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalInfo, setModalInfo] = useState({});
   const [dark, setDark] = useState(false);
   const windowWidth = useWindowWidth();
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -572,12 +572,20 @@ const App = () => {
             )}
             <Banner />
             <Services {...data.services} />
-            <Portfolio {...data.portfolio} setIsModalOpen={setIsModalOpen} />
+            <Portfolio
+              {...data.portfolio}
+              setIsModalOpen={setIsModalOpen}
+              setModalInfo={setModalInfo}
+            />
             <Blog {...data.blog} />
             <Contacts {...data.contacts} />
             <Location />
             {windowWidth && windowWidth > 636 && <Copyright />}
-            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <Modal
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+              modalInfo={modalInfo}
+            />
           </div>
         </main>
         {windowWidth && windowWidth <= 636 && (
