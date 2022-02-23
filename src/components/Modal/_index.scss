@@ -123,8 +123,24 @@
 
   &__image {
     margin-bottom: 20px;
-    width: 100%;
+    width: 631px;
+    height: 310px;
     box-shadow: 0 0 1px black;
+
+    @media (max-width: 1052px) {
+      width: 514px;
+      height: 243px;
+    }
+
+    @media (max-width: 636px) {
+      width: 314px;
+      height: 148px;
+    }
+
+    @media (max-width: 500px) {
+      width: 220px;
+      height: 104px;
+    }
   }
 
   &__buttons {
