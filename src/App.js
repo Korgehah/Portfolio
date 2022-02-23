@@ -20,32 +20,34 @@ import { Modal } from './components/Modal';
 import { Input } from './components/Input';
 import { Textarea } from './components/Textarea';
 /* images */
-import avatar from './assets/images/avatar.png';
-import photo from './assets/images/photo.png';
-import vkontakte from './assets/images/vkontakte.svg';
-import instagram from './assets/images/instagram.svg';
-import linkedin from './assets/images/linkedin.svg';
-import github from './assets/images/github.svg';
-import telegram from './assets/images/telegram.svg';
-import business from './assets/images/business.svg';
-import event from './assets/images/event.svg';
-import news from './assets/images/news.svg';
-import store from './assets/images/store.svg';
-import blog from './assets/images/blog.svg';
-import landing from './assets/images/landing.svg';
-import project1 from './assets/images/project1.png';
-import project2 from './assets/images/project2.png';
-import project3 from './assets/images/project3.png';
-// import project4 from './assets/images/project4.png';
-import project5 from './assets/images/project5.png';
-import img1 from './assets/images/img1.png';
-import img2 from './assets/images/img2.png';
-import img3 from './assets/images/img3.png';
-import home from './assets/images/Home.svg';
-import contacts from './assets/images/Contact.svg';
-import services from './assets/images/Services.svg';
-import portfolio from './assets/images/Portfolio.svg';
-import blogNav from './assets/images/blog_nav.svg';
+import {
+  avatar,
+  photo,
+  vkontakte,
+  instagram,
+  github,
+  telegram,
+  business,
+  event,
+  news,
+  store,
+  blog,
+  landing,
+  project1,
+  project2,
+  project3,
+  project4,
+  project5,
+  img1,
+  img2,
+  img3,
+  home,
+  contacts,
+  services,
+  portfolio,
+  blogNav,
+} from './images/index';
+
 /* Scrollbar */
 import { Scrollbar } from 'react-scrollbars-custom';
 import { Link } from 'react-scroll';
@@ -351,7 +353,7 @@ const Location = () => {
           }}
         >
           <Placemark geometry={[55.75975980555492, 37.705900405895406]} />
-          <ZoomControl defaultState />
+          <ZoomControl />
         </Map>
       </YMaps>
     </div>
@@ -371,7 +373,6 @@ const data = {
         alt: 'instagram',
         href: 'https://www.instagram.com/whontowqis/',
       },
-      { src: linkedin, alt: 'linkedin', href: 'https://www.linkedin.com/' },
       { src: telegram, alt: 'telegram', href: 'https://t.me/eixlu' },
       {
         src: github,
@@ -396,9 +397,10 @@ const data = {
     ],
     scale: [
       { title: 'Html', percent: '90%' },
-      { title: 'CSS', percent: '85%' },
-      { title: 'Js', percent: '80%' },
+      { title: 'CSS', percent: '80%' },
+      { title: 'Js', percent: '65%' },
       { title: 'React', percent: '75%' },
+      { title: 'Next.js', percent: '35%' },
     ],
 
     skills: [
@@ -407,6 +409,8 @@ const data = {
       'BEM',
       'Cross browser, adaptive layout',
       'Figma',
+      'Work with custom API',
+      'SQL',
     ],
   },
   services: {
@@ -470,7 +474,7 @@ const data = {
       { src: project1, alt: 'project' },
       { src: project2, alt: 'project' },
       { src: project3, alt: 'project' },
-      // { src: project4, alt: 'project' },
+      { src: project4, alt: 'project' },
       { src: project5, alt: 'project' },
     ],
   },

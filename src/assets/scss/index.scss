@@ -177,25 +177,25 @@ body {
   position: sticky;
   top: 0;
   height: 100vh;
-  max-height: 1302px;
+  max-height: 1397px;
 
   @media (max-width: 1530px) {
-    max-height: 1183px;
+    max-height: 1266px;
     font-size: 13px;
   }
 
   @media (max-width: 1260px) {
-    max-height: 964px;
+    max-height: 1038px;
     font-size: 11px;
   }
 
   @media (max-width: 1052px) {
-    max-height: 939px;
+    max-height: 1013px;
   }
 
   @media (max-width: 828px) {
     font-size: 10px;
-    max-height: 750px;
+    max-height: 849px;
   }
 
   @media (max-width: 636px) {

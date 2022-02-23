@@ -1,7 +1,9 @@
 import React from 'react';
-import project1 from '../../assets/images/project1_full.png';
-import project2 from '../../assets/images/project2_full.png';
-import project3 from '../../assets/images/project3_full.png';
+import project1 from '../../assets/images/project1.png';
+import project2 from '../../assets/images/project2.png';
+import project3 from '../../assets/images/project3.png';
+import project4 from '../../assets/images/project4.png';
+import project5 from '../../assets/images/project5.png';
 
 const modalData = [
   {
@@ -35,16 +37,6 @@ const modalData = [
     src: project3,
   },
   {
-    title: 'Online store',
-    description:
-      'This project is not ready. I decided to make a complete online store, using next.js and github gist (for JSON)',
-    stack: 'HTML, SCSS, React, Typescript, Next.js',
-    date: 'Work in progress',
-    repository: '',
-    vercel: '',
-    src: '',
-  },
-  {
     title: 'Student personal account',
     description: '',
     stack:
@@ -52,7 +44,17 @@ const modalData = [
     date: 'December, 2021',
     repository: '',
     vercel: '',
-    src: '',
+    src: project4,
+  },
+  {
+    title: 'Online store',
+    description:
+      'This project is not ready yet. I decided to make a complete online store, using next.js and github gist (for JSON)',
+    stack: 'HTML, SCSS, React, Typescript, Next.js',
+    date: 'Work in progress',
+    repository: '',
+    vercel: '',
+    src: project5,
   },
 ];
 

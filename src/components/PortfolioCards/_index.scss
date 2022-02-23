@@ -50,29 +50,31 @@
   &__card {
     display: flex;
     position: relative;
+    background-color: #ffffff;
 
     &-image {
+      transform: scale(0.8);
       width: 310px;
-      height: 300px;
+      height: 310px;
 
       @media (max-width: 1530px) {
         width: 256px;
-        height: 247px;
+        height: 256px;
       }
 
       @media (max-width: 1260px) {
         width: 206px;
-        height: 200px;
+        height: 206px;
       }
 
       @media (max-width: 1260px) {
         width: 153px;
-        height: 147px;
+        height: 153px;
       }
 
       @media (max-width: 828px) {
         width: 166px;
-        height: 160px;
+        height: 166px;
       }
 
       @media (max-width: 636px) {

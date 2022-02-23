@@ -1,25 +1,25 @@
 .navigation {
   height: 100vh;
-  max-height: 1302px;
+  max-height: 1397px;
   position: sticky;
   top: 0;
   background-color: $color-content-background;
   transition: background-color 0.3s ease-in-out;
 
   @media (max-width: 1530px) {
-    max-height: 1183px;
+    max-height: 1266px;
   }
 
   @media (max-width: 1260px) {
-    max-height: 964px;
+    max-height: 1038px;
   }
 
   @media (max-width: 1052px) {
-    max-height: 939px;
+    max-height: 1013px;
   }
 
   @media (max-width: 828px) {
-    max-height: 750px;
+    max-height: 849px;
   }
 
   @media (max-width: 636px) {
