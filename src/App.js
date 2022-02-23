@@ -394,8 +394,8 @@ const data = {
     scale: [
       { title: 'Html', percent: '90%' },
       { title: 'CSS', percent: '80%' },
-      { title: 'Js', percent: '65%' },
-      { title: 'React', percent: '75%' },
+      { title: 'Js', percent: '60%' },
+      { title: 'React', percent: '70%' },
       { title: 'Next.js', percent: '35%' },
     ],
 
@@ -444,8 +444,8 @@ const data = {
       },
       {
         src: blog,
-        alt: 'blog',
-        title: 'blog',
+        alt: 'Blog',
+        title: 'Blog',
         description:
           'Blogs are normally updated habitually, and more seasoned posts can be seen through archives. ',
       },
