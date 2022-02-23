@@ -23,6 +23,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .layout {
   display: flex;
   background-color: $color-background;

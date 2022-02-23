@@ -181,17 +181,13 @@ const Banner = () => {
       <div className='banner__wrapper'>
         <div className='banner__info'>
           <h1 className='banner__name'>
-            I'm Nikolaev Evgeny
+            I'm Nikolaev{' '}
+            <span className='banner__text banner__text_colored'>Evgeny</span>
             <br />
-            <span className='banner__text banner__text_colored'>
-              Front-end
-            </span>{' '}
-            Developer
           </h1>
           <p className='banner__description'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et,
-            volutpat feugiat placerat lobortis. Natoque rutrum semper sed
-            suspendisse nunc lectus.
+            I'm Junior Frontend Developer based in Russia. I am studying web
+            development and I want to become a specialist in it.
           </p>
           <Link
             className='banner__button-container'
@@ -416,8 +412,6 @@ const data = {
   services: {
     header: {
       title: 'My Services',
-      description:
-        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
     },
     cards: [
       {
@@ -450,8 +444,8 @@ const data = {
       },
       {
         src: blog,
-        alt: 'Blog',
-        title: 'Blog',
+        alt: 'blog',
+        title: 'blog',
         description:
           'Blogs are normally updated habitually, and more seasoned posts can be seen through archives. ',
       },
@@ -480,31 +474,34 @@ const data = {
   },
   blog: {
     header: {
-      title: 'Blog',
+      title: 'Useful Articles',
       description:
-        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. lorem ipsum',
+        'Below are helpful articles that have helped me in my learning.',
     },
     cards: [
       {
         src: img1,
-        alt: 'blog',
-        title: 'How To Make Web Templates',
+        alt: 'article',
+        title: 'React Hook Form',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+          'Handling form inputs are an absolute necessity for any modern web application.',
+        href: 'https://javascript.plainenglish.io/how-to-use-react-hook-form-with-typescript-2cf597c0c45f',
       },
       {
         src: img2,
-        alt: 'blog',
-        title: 'Make Business Card',
+        alt: 'article',
+        title: 'Grid Coding Approaches',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+          'We can reach the same layout using different syntax for defining grid columns, rows, and areas.',
+        href: 'https://www.viget.com/articles/getting-started-with-css-grid-three-part-2/',
       },
       {
         src: img3,
-        alt: 'blog',
-        title: 'How To Make Flyer Design',
+        alt: 'article',
+        title: 'Fitting Text',
         description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae nulla diam in ac dictum a urna ',
+          'There are a number of ways to put some text in a container and make it to fill that container.',
+        href: 'https://css-tricks.com/fitting-text-to-a-container/',
       },
     ],
   },

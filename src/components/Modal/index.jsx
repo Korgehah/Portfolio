@@ -30,14 +30,6 @@ const Modal = ({ isModalOpen, setIsModalOpen, modalInfo }) => {
           >
             <Button addClass='modal__button'>Visit Website</Button>
           </a>
-          <a
-            href={modalInfo.repository}
-            className='modal__button-link'
-            target='_blank'
-            rel='noreferrer'
-          >
-            <Button addClass='modal__button'>Open Rep</Button>
-          </a>
         </div>
       </div>
       <div className='modal__overlay' onClick={() => setIsModalOpen(false)} />

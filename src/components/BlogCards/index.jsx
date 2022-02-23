@@ -1,8 +1,8 @@
 import React from 'react';
 
-const BlogCard = ({ src, alt, title, description }) => {
+const BlogCard = ({ src, alt, title, description, href }) => {
   return (
-    <div className='blog__card'>
+    <a className='blog__card' href={href} target='_blank' rel='noreferrer'>
       <div className='blog__image-container'>
         <img className='blog__image' src={src} alt={alt} />
       </div>
@@ -11,7 +11,7 @@ const BlogCard = ({ src, alt, title, description }) => {
         <p className='blog__card-description'>{description}</p>
         <span className='blog__source'>Learn More</span>
       </div>
-    </div>
+    </a>
   );
 };
 
