@@ -23,6 +23,7 @@ import contacts from '../assets/images/Contact.svg';
 import services from '../assets/images/Services.svg';
 import portfolio from '../assets/images/Portfolio.svg';
 import blogNav from '../assets/images/blog_nav.svg';
+import cv from '../assets/files/CV.pdf';
 
 export {
   avatar,
@@ -50,4 +51,5 @@ export {
   services,
   portfolio,
   blogNav,
+  cv,
 };
