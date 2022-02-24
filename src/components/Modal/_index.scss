@@ -36,7 +36,12 @@
     }
 
     @media (max-width: 636px) {
-      width: calc(100% - 40px);
+      width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 400px) {
+      padding: 15px;
     }
   }
 
@@ -127,7 +132,8 @@
     margin-bottom: 20px;
     width: 631px;
     height: 310px;
-    box-shadow: 0 0 1px black;
+    margin: 20px 0;
+    box-shadow: 1px 1px 15px rgb(0 0 0 / 20%);
 
     @media (max-width: 1052px) {
       width: 514px;
