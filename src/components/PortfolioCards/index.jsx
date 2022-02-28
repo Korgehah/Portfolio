@@ -29,7 +29,7 @@ const modalData = [
     description:
       'In this project I used HTML + CSS without preprocessors and try to use jQuery just a little. Also I make some CSS animations',
     stack: 'HTML, CSS (+animations), JQuery',
-    date: 'December, 2021',
+    date: 'January, 2021',
     vercel: 'https://planner-app-kappa.vercel.app/',
     src: project3,
   },
@@ -39,8 +39,8 @@ const modalData = [
       'Commercial project. Participated in the development of the personal account of the student. Make front using Next.js, React, Typescript and Ant.design UI library. I also use react-hook-form for validation on the auth/register page, and in the settings',
     stack:
       'HTML, SCSS, React, Typescript, Next.js, Ant Design (React UI Library)',
-    date: 'December, 2021',
-    vercel: '',
+    date: 'February, 2021',
+    vercel: 'https://lk-daje.vercel.app/',
     src: project4,
   },
   {
