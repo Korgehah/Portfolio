@@ -407,7 +407,7 @@ const data = {
       'BEM',
       'Cross browser, adaptive layout',
       'Figma',
-      'Work with custom API',
+      'Redux',
       'SQL',
     ],
   },
